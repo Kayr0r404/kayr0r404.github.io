@@ -150,9 +150,22 @@ button {
   width: 405px;
 }
 
-@media only screen and (min-width: 1024px) {
-    .projects {
-    }
+.highlighted-text {
+  position: relative;
+  display: inline-block;
+  }
+
+.highlighted-text::before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  right: 0%;
+  height: 60%;
+  background-color: rgb(237, 105, 85);
+  transform: rotate(-8.5deg);
+  z-index: -1;
+  border-radius: 100px;
 }
 
 #contact {
@@ -258,4 +271,6 @@ footer {
       gap: 2rem;
     }
   }
-  
+  .hidden {
+    display: none;
+}

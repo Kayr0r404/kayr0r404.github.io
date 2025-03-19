@@ -17,7 +17,7 @@
     <nav id="nav__bar">
         <div class="logo"></div>
         <ul>
-            <li><a href="/about">About</a></li>
+            <li><a href="#" onclik="navigateTo('about.html')">About</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/#projects">Projects</a></li>
         </ul>
@@ -26,7 +26,7 @@
         </div>
     </nav>
     <section id="bio">
-        <h1 style="font-size: 30px; font-weight: 900;">My Skills</h1>
+        <h1 style="font-size: 30px; font-weight: 900;">My <span class="highlighted-text">Skills</span></h1>
         <div class="bio__container">
             <img id="profile" src="./assets/mahlar_k.jpg" alt="" loading="lazy" width="300" decoding="async" />
             <div style="margin: 2rem;">
@@ -69,7 +69,7 @@
         </div>
     </section>
     <section id="projects">
-        <h1>Projects</h1>
+        <h1 class="highlighted-text">Projects</h1>
         <div class="project__container">
             <p>FullStack Project</p>
             <h1>tlik: E-commerce Website</h1>
@@ -164,7 +164,7 @@
     </section>
 
     <section id="contact">
-        <h1 id="contact__hero">Let's Have a Chat</h1>
+        <h1 id="contact__hero">Let's Have a <span class="highlighted-text">Chat</span></h1>
         <a href="mailto:mahlarekarabo.702@gmail.com">mahlarekarab.702@gmail.com</a>
         <a href="mailto:mahlarekarabo.702@gmail.com">
             <button data-text="Get in Touch">Get in Touch</button>
@@ -173,7 +173,6 @@
 
 
     <footer>
-        <!-- <div id="footWrap"> -->
         <div style="max-width: 200px; color: #b7b4b9">
             <a class="sc-1307afb1-0 bsASAv" href="/">
                 Karabo Mahlare
@@ -185,7 +184,7 @@
         <div style="width: 200px;">
             <div class="fHeading">Links</div>
             <div style="display: grid; gap: 4px; grid-template-columns: 1fr 1fr;">
-                <a href="/about">About</a>
+                <a href="/about" onclik="navigateTo('/about')">About</a>
                 <a href="/blog">Blog</a>
                 <a href="/#projects">Projects</a>
                 <a href="/#contact">Contact</a>
@@ -230,8 +229,14 @@
                 </div>
             </div>
         </div>
-        <!-- </div> -->
     </footer>
+
+
+    <script>
+        function navigateTo(URL) {
+            window.location.href = URL;
+        }
+    </script>
 </body>
 
 </html>
