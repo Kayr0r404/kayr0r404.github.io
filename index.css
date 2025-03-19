@@ -81,6 +81,11 @@ button {
     height: 100%;
   }
   
+  #nav__bar {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+  }
 
 #bio {
     max-width: 1100px;
