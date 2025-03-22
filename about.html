@@ -16,7 +16,7 @@
 <body>
     <div id="navbar"></div>
     <h1>I Have Always Loved Tech</h1>
-    <p>Looking for my CV</p>
+    <a href="#">Looking for my CV</a>
     <p>
     <h3>
         How would I describe myself as a person?
@@ -99,21 +99,7 @@
 
     </p>
     <div id="footer"></div> <!-- Footer will be loaded here -->
-    <script>
-        function loadComponent(elementId, filePath) {
-            fetch(filePath)
-                .then(response => {
-                    console.log(response.text)
-                    return response.text()
-                })
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(error => console.error(`Error loading ${filePath}:`, error));
-        }
-        // Call loadComponent after script.js is loaded
-        loadComponent("navbar", "./navbar.html");
-        console.log(loadComponent("footer", "./footer.html"));
+    <script src="./script.js">
     </script>
 </body>
 
