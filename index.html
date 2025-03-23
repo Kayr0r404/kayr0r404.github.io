@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <script src="./script.js" defer></script>
     <link rel="icon" type="image/png" href="https://aaspinwall.com/static/favicon.png">
     <title>Mahlare Karabo Portfolio</title>
 </head>
@@ -45,9 +46,11 @@
                     seeking hands-on experience in real-world applications. I am eager to work with technologies
                     like Python, JavaScript (Node.js, React), and SQL while continuously expanding my tech stack by
                     learning new technologies. I am driven by a passion for problem-solving and software
-                    development, and I am excited to apply my skills in a professional setting.
-
-                    <span id="see__more">
+                    development, and I am excited to apply my skills in a professional setting
+                    <span id="bio__points" style="letter-spacing: 3px; color: rgb(237, 105, 85);"
+                        onclick="showMore('bio__text', 'bio__points')"> ...
+                    </span>
+                    <span style="display: none;" id="bio__text">
                         <h4>Ideal Next Job</h4>I am looking for an entry-level or internship opportunity where I can
                         gain
                         practical experience
@@ -78,32 +81,42 @@
                     </ul>
                     <p>Full-stack e-commerce website designed for seamless online shopping. It features a React frontend
                         and a Flask backend, ensuring a dynamic user experience with efficient data handling. The key
-                        functionalities and technologies used:
+                        functionalities and technologies used:<span id="proj__points"
+                            style="letter-spacing: 3px; color: rgb(237, 105, 85); font-weight: bold;"
+                            onclick="showMore('more__text', 'proj__points')"> ...
+                        </span>
+                    <div style="display: none;" id="more__text">
 
-                        <!-- Frontend (React)
-                        - Routing: Implemented using React Router to navigate between product listings, product details,
-                        cart, and user profiles.
-                        - State Management: Uses React state to manage UI elements and localStorage for cart and
-                        wishlist persistence.
-                        - User Authentication: Integrated with JWT to allow users to register, log in, and manage their
-                        accounts.
-                        - Wishlist Feature: Users can add/remove products from their wishlist, with a dedicated wishlist
-                        page to view saved items.
-                        - Cart & Checkout: Items can be added to the cart, quantities adjusted, and orders placed
-                        seamlessly.
-                        - Payment Gateway: Integrated with Stripe to process secure payments.
+                        <h3>Frontend (React)</h3>
+                        <ul id="more__text">
+                            <li>Routing: Implemented using React Router to navigate between product listings, product
+                                details, cart, and user profiles.</li>
+                            <li>State Management: Uses React state to manage UI elements and localStorage for cart and
+                                wishlist persistence.</li>
+                            <li>User Authentication: Integrated with JWT to allow users to register, log in, and manage
+                                their accounts.</li>
+                            <li> Wishlist Feature: Users can add/remove products from their wishlist, with a dedicated
+                                wishlist page to view saved items.</li>
+                            <li>Cart & Checkout: Items can be added to the cart, quantities adjusted, and orders placed
+                                seamlessly.</li>
+                            <li>Payment Gateway: Integrated with Stripe to process secure payments.
+                        </ul>
+                        <h3>Backend (Flask)</h3>
+                        <ul id="more__text">
+                            <li>User Authentication: Uses JWT for secure login and session management.</li>
+                            <li>Database Management: Implemented with SQLAlchemy for handling user data, products,
+                                orders, and carts.</li>
+                            <li>Product Management: Allows admins to add, update, and delete products.</li>
+                            <li>Order Processing: Stores order history, calculates totals, and updates product stock
+                                accordingly.</li>
+                        </ul>
+                        <h3>Other Features</h3>
+                        <ul id="more__text">
+                            <li>Responsive Design: Works across mobile, tablet, and desktop devices.</li>
+                            <li>ES6 & Babel Support: Ensures compatibility across browsers.</li>
+                        </ul>
 
-                        Backend (Flask)
-                        - User Authentication: Uses JWT for secure login and session management.
-                        - Database Management: Implemented with SQLAlchemy for handling user data, products, orders, and
-                        carts.
-                        - Product Management: Allows admins to add, update, and delete products.
-                        - Order Processing: Stores order history, calculates totals, and updates product stock
-                        accordingly.
-
-                        Other Features
-                        - Responsive Design: Works across mobile, tablet, and desktop devices.
-                        - ES6 & Babel Support: Ensures compatibility across browsers. -->
+                    </div>
                     </p>
                 </div>
                 <div class="img__container">
@@ -198,6 +211,7 @@
     </section>
     <div id="footer"></div> <!-- Footer will be loaded here -->
     <script src="./script.js">
+
     </script>
 </body>
 
