@@ -12,12 +12,11 @@ function loadComponent(elementId, filePath) {
         .catch(error => console.error(`Error loading ${filePath}:`, error));
 }
 
-
-
 window.addEventListener("load", () => {
     loadComponent("footer", "./footer.html");
     loadComponent("navbar", "./navbar.html");
 })
+
 
 const showMore = (elementId, pointsContainerId) => {
     let points = document.getElementById(pointsContainerId);
@@ -35,7 +34,9 @@ const showMore = (elementId, pointsContainerId) => {
     }
 };
 
+
 const route = (event) => {
+    console.log("event>>>", event)
     event = event || window.event;
     event.preventDefault();
     window.history.pushState({}, "", event.target.href);
