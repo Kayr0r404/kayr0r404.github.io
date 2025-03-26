@@ -12,8 +12,12 @@ function loadComponent(elementId, filePath) {
         .catch(error => console.error(`Error loading ${filePath}:`, error));
 }
 
-loadComponent("footer", "./footer.html");
-loadComponent("navbar", "./navbar.html");
+
+
+window.addEventListener("load", () => {
+    loadComponent("footer", "./footer.html");
+    loadComponent("navbar", "./navbar.html");
+})
 
 const showMore = (elementId, pointsContainerId) => {
     let points = document.getElementById(pointsContainerId);
@@ -39,16 +43,17 @@ const route = (event) => {
 };
 
 const routes = {
-    404: "404.html",
-    "/": "home.html",
-    "/about": "about.html",
-    "/contact": "contact.html"
+    404: "./404.html",
+    "/": "./home.html",
+    "/about": "./about.html",
+    "/contact": "./contact.html"
 };
 
 const handleLocation = async () => {
     const path = window.location.pathname;
+    console.log("pathname", path)
     const routePath = routes[path] || routes[404];
-    console.log('path', routePath);
+    console.log('routePath', routePath)
     
     try {
         const response = await fetch(routePath);
