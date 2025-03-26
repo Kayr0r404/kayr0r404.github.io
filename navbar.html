@@ -1,11 +1,15 @@
 <nav id="nav__bar">
-    <div class="logo"></div>
+    <div class="logo">
+        <a href="/" onclick="route(event)">
+            <img src="./assets/logo.png" alt="Logo" width="200px" />
+        </a>
+    </div>
     <ul>
         <li><a href="/about" onclick="route(event)">About</a></li>
         <li><a href="/blog" onclick="route(event)">Blog</a></li>
         <li><a href="/#projects" onclick="(e) => { e.preventDefaut()}">Projects</a></li>
     </ul>
     <div class="highlighted-text">
-        <a href="/#contact" onclick="(e) => { e.preventDefaut()}">Let's Talk</a>
+        <a href="/contact" onclick="route(event)">Let's Talk</a>
     </div>
 </nav>

@@ -38,7 +38,11 @@ const showMore = (elementId, pointsContainerId) => {
 const route = (event) => {
     event = event || window.event;
     event.preventDefault();
-    window.history.pushState({}, "", event.target.href);
+
+    // Ensure we're getting the href from the <a> element
+    const href = event.currentTarget.getAttribute("href");
+    
+    window.history.pushState({}, "", href);
     handleLocation();
 };
 
@@ -51,6 +55,7 @@ const routes = {
 
 const handleLocation = async () => {
     const path = window.location.pathname;
+    console.log("path", path)
     const routePath = routes[path] || routes[404];
     
     try {
