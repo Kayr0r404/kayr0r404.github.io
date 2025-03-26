@@ -3,9 +3,9 @@
     <ul>
         <li><a href="/about" onclick="route(event)">About</a></li>
         <li><a href="/blog" onclick="route(event)">Blog</a></li>
-        <li><a href="/#projects" onclick="route(event)">Projects</a></li>
+        <li><a href="/#projects" onclick="(e) => { e.preventDefaut()}">Projects</a></li>
     </ul>
     <div class="highlighted-text">
-        <a href="/#contact">Let's Talk</a>
+        <a href="/#contact" onclick="(e) => { e.preventDefaut()}">Let's Talk</a>
     </div>
 </nav>
