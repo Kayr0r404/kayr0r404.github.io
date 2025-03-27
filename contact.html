@@ -2,7 +2,8 @@
     <h2 class="highlighted-text">Get In Touch</h2>
     <p class="subtitle">Have a project in mind or want to collaborate? Send me a message!</p>
 
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" method="POST"
+        action="https://formsubmit.co/mahlarekarabo.702@gmail.com">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -20,7 +21,7 @@
 
         <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea type="text" id="message" name="message" rows="5" required></textarea>
         </div>
 
         <button type="submit" data-text="Send Message">Send Message</button>
