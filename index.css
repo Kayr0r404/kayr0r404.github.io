@@ -160,7 +160,7 @@ button {
   font-weight: normal;
   list-style-type: square;
 }
-#proj__points:hover, #bio__points:hover {
+#proj__points:hover, #bio__points:hover, #x__points:hover {
   cursor: pointer;
 }
 
@@ -396,4 +396,22 @@ textarea {
   border-radius: 4px;
   margin-top: 1rem;
   text-align: center;
+}
+
+#uniq {
+  list-style: circle;
+  margin-block: 1px;
+  padding-block: 1px;
+}
+#uniq > li > h5 {
+  margin-block: 2px;
+  padding-block: 2px;
+}
+
+#uniq > li {
+  font-size: 14pt;
+  font-weight: normal;
+  background-color: #EDf4f5;
+  text-decoration: none;
+  color: #000;
 }

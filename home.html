@@ -122,12 +122,11 @@
                 </ul>
                 <p>Full-stack e-commerce website designed for seamless online shopping. It features a React frontend
                     and a Flask backend, ensuring a dynamic user experience with efficient data handling. The key
-                    functionalities and technologies used:<span id="proj__points"
-                        style="letter-spacing: 3px; color: rgb(237, 105, 85);"
+                    functionalities and technologies used:
+                    <span id="proj__points" style="letter-spacing: 3px; color: rgb(237, 105, 85);"
                         onclick="showMore('more__text', 'proj__points')"> ... see more
                     </span>
                 <div style="display: none;" id="more__text">
-
                     <h3>Frontend (React)</h3>
                     <ul id="more__text">
                         <li>Routing: Implemented using React Router to navigate between product listings, product
@@ -172,6 +171,70 @@
     </div>
 
     <div class="project__container">
+        <h1>RAG Application</h1>
+        <div class="projects">
+            <div>
+                <ul class="tech__stack">
+                    <li>Python</li>
+                    <li>MongoDB</li>
+                    <li>Google Gemini</li>
+                    <li>Streamlit</li>
+                    <li>LangChain</li>
+                </ul>
+                <p>
+
+                    I developed a high-performance Retrieval-Augmented Generation (RAG) application designed to
+                    transform static PDF documents into interactive, searchable knowledge bases. Unlike standard LLM
+                    implementations, this system eliminates "hallucinations" by strictly grounding AI responses in
+                    verified private data.
+                    <span id="x__points" style="letter-spacing: 3px; color: rgb(237, 105, 85); margin-block:5px"
+                        onclick="showMore('x__text', 'x__points')">See More
+                    </span>
+                </p>
+                <div style="display: none;" id="x__text">
+                    <h3>Key Technical Features</h3>
+                    <ul id="uniq">
+                        <li>
+                            <h5>Hybrid PDF Ingestion:</h5>
+                            Built a universal document loader capable of processing both local files and remote URLs via
+                            a custom robust fetching logic with header spoofing to bypass bot-detection.
+                        </li>
+                        <li>
+                            <h5>Vector Search Architecture:</h5>
+                            Leveraged MongoDB Atlas Vector Search to perform high-dimensional similarity searches,
+                            ensuring the most relevant context is retrieved for every user query.
+                        </li>
+                        <li>
+                            <h5>Optimized Embeddings:</h5>
+                            Integrated Google's text-embedding-004 model to generate semantic vectors, enabling the
+                            system to understand the meaning of the text rather than just matching keywords.
+                        </li>
+                        <li>
+                            <h5>Expert Persona Engine:</h5>
+                            Engineered a sophisticated system prompt that balances strict data grounding with a
+                            professional, conversational "expert human" tone.
+                        </li>
+                        <li>
+                            <h5>Streamlit UI:</h5>
+                            Responsive web interface that allows users to upload documents, initialize
+                            database indexes, and chat with their data in real-time.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img__container">
+                <a href="https://theassistant.streamlit.app/" target="_blank" rel="noopener noreferrer">
+                    <img id="profile" src="./assets/RAG.png" alt="" loading="lazy" decoding="async" data-nimg="1" />
+                </a>
+            </div>
+        </div>
+        <a href="https://theassistant.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            <button data-text="View Project">View Project</button>
+        </a>
+    </div>
+
+
+    <div class="project__container">
         <p>FullStack Project</p>
         <h1>notes_app: Notes App</h1>
         <div class="projects">
@@ -211,7 +274,7 @@
                 <ul class="tech__stack">
                     <li>Typescript</li>
                     <li>React</li>
-                    <li>python</llYYYYi>
+                    <li>python</li>
                     <li>Django</li>
                     <li>MySQL</li>
                     <li>JWT</li>
