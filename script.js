@@ -15,20 +15,41 @@ function loadComponent(elementId, filePath) {
 window.addEventListener("load", () => {
     loadComponent("footer", "./footer.html");
     loadComponent("navbar", "./navbar.html");
+    initHamburger();
 })
+
+function initHamburger() {
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.hamburger')) {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            if (navLinks && hamburger) {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        }
+        
+        if (e.target.closest('.nav-links a')) {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            if (navLinks) navLinks.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+        }
+    });
+}
 
 
 const showMore = (elementId, pointsContainerId) => {
     let points = document.getElementById(pointsContainerId);
     let moreText = document.getElementById(elementId);
-    let showMoreButton = document.getElementById("show__more");
+    let showMoreButton = document.getElementById("show__more"); 
 
     if (points.style.display === "none") {
         moreText.style.display = "none";
         points.style.display = "inline";
         showMoreButton.style.display = "inline";
     } else {
-        moreText.style.display = "inline";
+        moreText.style.display = "block";
         points.style.display = "none";
         showMoreButton.style.display = "none";
     }

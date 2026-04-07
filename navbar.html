@@ -1,15 +1,19 @@
 <nav id="nav__bar">
     <div class="logo">
         <a href="/" onclick="route(event)">
-            <img src="./assets/logo.png" alt="Logo" width="200px" />
+            KM<span>.</span>
         </a>
     </div>
-    <ul>
-        <li><a href="/about" onclick="route(event)">About</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1Y_TB0Lmo50Vv2j7arpT3KwpSEH0UEmEe?usp=sharing">CV</a></li>
-        <li><a href="/#projects" onclick="(e) => { e.preventDefaut()}">Projects</a></li>
-    </ul>
-    <div class="highlighted-text">
-        <a href="/contact" onclick="route(event)">Let's Talk</a>
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+    <ul class="nav-links">
+        <li><a href="/" onclick="route(event)">Home</a></li>
+        <li><a href="/about" onclick="route(event)">About</a></li>
+        <li><a href="/#projects" onclick="route(event)">Projects</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1Y_TB0Lmo50Vv2j7arpT3KwpSEH0UEmEe?usp=sharing" target="_blank">CV</a></li>
+        <li><a href="/contact" onclick="route(event)" class="nav-cta-mobile">Let's Talk</a></li>
+    </ul>
 </nav>
