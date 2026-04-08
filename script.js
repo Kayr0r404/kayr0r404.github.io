@@ -1,5 +1,5 @@
 function loadComponent(elementId, filePath) {
-    fetch(filePath)
+    return fetch(filePath)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -14,24 +14,24 @@ function loadComponent(elementId, filePath) {
 
 window.addEventListener("load", () => {
     loadComponent("footer", "./footer.html");
-    loadComponent("navbar", "./navbar.html");
-    initHamburger();
+    loadComponent("navbar", "./navbar.html").then(() => {
+        initHamburger();
+    });
 })
 
 function initHamburger() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+    
     document.addEventListener('click', (e) => {
-        if (e.target.closest('.hamburger')) {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            if (navLinks && hamburger) {
-                navLinks.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            }
-        }
-        
         if (e.target.closest('.nav-links a')) {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
             if (navLinks) navLinks.classList.remove('active');
             if (hamburger) hamburger.classList.remove('active');
         }
