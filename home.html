@@ -94,6 +94,62 @@
     </div>
 
     <div class="project__container">
+        <p>★ Community Platform</p>
+        <h1>Plus27</h1>
+        <div class="projects">
+            <div class="project-info">
+                <ul class="tech__stack">
+                    <li>Next.js</li>
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>Tailwind CSS</li>
+                    <li>FastAPI</li>
+                    <li>Python</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>Docker</li>
+                </ul>
+                <p><strong>Why I built Plus27</strong></p>
+                <p>
+                    I built Plus27 to create a digital home for local South African communities—a single, area-first
+                    platform where people can connect, trade, and find opportunities close to where they live. Instead
+                    of treating community life as separate activities spread across different apps and groups, Plus27
+                    brings them together in one place.
+                </p>
+                <p id="plus27__points" class="see-more" onclick="showMore('plus27__text', 'plus27__points')">
+                    ★ The problem I’m trying to solve →
+                </p>
+                <div style="display: none;" id="plus27__text">
+                    <p>
+                        Local information and opportunities are often fragmented and hard to trust: neighborhood
+                        discussions happen in one place, buying and selling in another, odd jobs are shared informally,
+                        and rental listings are mixed in with irrelevant results from far away. This makes it difficult
+                        for residents to discover what’s relevant to their area and for local vendors and service
+                        providers to gain visibility.
+                    </p>
+                    <p>
+                        Plus27 addresses this by giving each community its own hub for conversations, events, and
+                        groups, alongside a local marketplace, vendor profiles with reviews, an odd-jobs board, and
+                        rental listings—so people see what matters in their area by default, while still being able to
+                        explore other communities when needed.
+                    </p>
+                </div>
+            </div>
+            <div class="img__container">
+                <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/Screenshot%202026-11-12%20122831.png" alt="Plus27 platform screenshot"
+                        loading="lazy" decoding="async" />
+                </a>
+            </div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">
+                <button data-text="View on GitHub">View on GitHub</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="project__container">
         <p>★ AI / Machine Learning</p>
         <h1>Intelligent RAG System</h1>
         <div class="projects">
@@ -177,120 +233,70 @@
         </div>
     </div>
 
-    <div class="project__container">
-        <p>★ Backend API</p>
-        <h1>Notes API Platform</h1>
-        <div class="projects">
-            <div class="project-info">
-                <ul class="tech__stack">
-                    <li>Django REST</li>
-                    <li>React</li>
-                    <li>SQLite</li>
-                    <li>JWT</li>
-                </ul>
-                <p>
-                    RESTful API backend with Django and React frontend. Supports user authentication,
-                    CRUD operations for notes, and public/private sharing with permission-based access.
-                </p>
-            </div>
-            <div class="img__container">
-                <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/notesapp.png" alt="Notes App" loading="lazy" decoding="async" />
-                </a>
-            </div>
-        </div>
-        <div style="margin-top: 1.5rem;">
-            <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener noreferrer">
-                <button data-text="View Project">View Project</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="project__container">
-        <p>★ Full-Stack Platform</p>
-        <h1>TheQuide Author Platform</h1>
-        <div class="projects">
-            <div class="project-info">
-                <ul class="tech__stack">
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Django</li>
-                    <li>Firebase</li>
-                    <li>MySQL</li>
-                </ul>
-                <p>
-                    Dynamic author platform for writers to showcase their work. Combines React frontend with
-                    Firebase real-time features and Django backend for robust content management.
-                </p>
-            </div>
-            <div class="img__container">
-                <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/thequide.png" alt="TheQuide Platform" loading="lazy"
-                        decoding="async" />
-                </a>
-            </div>
-        </div>
-        <div style="margin-top: 1.5rem;">
-            <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">
-                <button data-text="View on GitHub">View on GitHub</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="project__container">
-        <p>★ Community Platform</p>
-        <h1>Plus27</h1>
-        <div class="projects">
-            <div class="project-info">
-                <ul class="tech__stack">
-                    <li>Next.js</li>
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Tailwind CSS</li>
-                    <li>FastAPI</li>
-                    <li>Python</li>
-                    <li>PostgreSQL</li>
-                    <li>MongoDB</li>
-                    <li>Docker</li>
-                </ul>
-                <p><strong>Why I built Plus27</strong></p>
-                <p>
-                    I built Plus27 to create a digital home for local South African communities—a single, area-first
-                    platform where people can connect, trade, and find opportunities close to where they live. Instead
-                    of treating community life as separate activities spread across different apps and groups, Plus27
-                    brings them together in one place.
-                </p>
-                <p id="plus27__points" class="see-more" onclick="showMore('plus27__text', 'plus27__points')">
-                    ★ The problem I’m trying to solve →
-                </p>
-                <div style="display: none;" id="plus27__text">
+    <div id="more-projects" style="display: none;">
+        <div class="project__container">
+            <p>★ Backend API</p>
+            <h1>Notes API Platform</h1>
+            <div class="projects">
+                <div class="project-info">
+                    <ul class="tech__stack">
+                        <li>Django REST</li>
+                        <li>React</li>
+                        <li>SQLite</li>
+                        <li>JWT</li>
+                    </ul>
                     <p>
-                        Local information and opportunities are often fragmented and hard to trust: neighborhood
-                        discussions happen in one place, buying and selling in another, odd jobs are shared informally,
-                        and rental listings are mixed in with irrelevant results from far away. This makes it difficult
-                        for residents to discover what’s relevant to their area and for local vendors and service
-                        providers to gain visibility.
-                    </p>
-                    <p>
-                        Plus27 addresses this by giving each community its own hub for conversations, events, and
-                        groups, alongside a local marketplace, vendor profiles with reviews, an odd-jobs board, and
-                        rental listings—so people see what matters in their area by default, while still being able to
-                        explore other communities when needed.
+                        RESTful API backend with Django and React frontend. Supports user authentication,
+                        CRUD operations for notes, and public/private sharing with permission-based access.
                     </p>
                 </div>
+                <div class="img__container">
+                    <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/notesapp.png" alt="Notes App" loading="lazy" decoding="async" />
+                    </a>
+                </div>
             </div>
-            <div class="img__container">
-                <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/Screenshot%202026-11-12%20122831.png" alt="Plus27 platform screenshot"
-                        loading="lazy" decoding="async" />
+            <div style="margin-top: 1.5rem;">
+                <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener noreferrer">
+                    <button data-text="View Project">View Project</button>
                 </a>
             </div>
         </div>
-        <div style="margin-top: 1.5rem;">
-            <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">
-                <button data-text="View on GitHub">View on GitHub</button>
-            </a>
+
+        <div class="project__container">
+            <p>★ Full-Stack Platform</p>
+            <h1>TheQuide Author Platform</h1>
+            <div class="projects">
+                <div class="project-info">
+                    <ul class="tech__stack">
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Django</li>
+                        <li>Firebase</li>
+                        <li>MySQL</li>
+                    </ul>
+                    <p>
+                        Dynamic author platform for writers to showcase their work. Combines React frontend with
+                        Firebase real-time features and Django backend for robust content management.
+                    </p>
+                </div>
+                <div class="img__container">
+                    <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/thequide.png" alt="TheQuide Platform" loading="lazy"
+                            decoding="async" />
+                    </a>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">
+                    <button data-text="View on GitHub">View on GitHub</button>
+                </a>
+            </div>
         </div>
+    </div>
+
+    <div style="margin-top: 2rem; text-align: center;">
+        <button id="projects-next-btn" data-text="Next" onclick="showMoreProjects()">Next</button>
     </div>
 
 </section>

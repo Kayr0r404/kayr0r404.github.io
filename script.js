@@ -96,6 +96,17 @@ const handleLocation = async () => {
     }
 };
 
+const showMoreProjects = () => {
+    const more = document.getElementById("more-projects");
+    const btn = document.getElementById("projects-next-btn");
+    if (more) {
+        more.style.display = "block";
+    }
+    if (btn) {
+        btn.style.display = "none";
+    }
+};
+
 window.onpopstate = handleLocation;
 window.route = route;
 handleLocation();
