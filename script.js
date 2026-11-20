@@ -121,7 +121,6 @@ document.addEventListener("submit", async (e) => {
         button.textContent = "Sending...";
     }
     if (status) {
-        status.className = "";
         status.textContent = "Sending your message...";
     }
 
@@ -141,12 +140,10 @@ document.addEventListener("submit", async (e) => {
 
         form.reset();
         if (status) {
-            status.className = "is-success";
             status.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
         }
     } catch (error) {
         if (status) {
-            status.className = "is-error";
             status.innerHTML = 'Something went wrong. Please email me directly at <a href="mailto:mahlarekarabo.702@gmail.com">mahlarekarabo.702@gmail.com</a>.';
         }
     } finally {
