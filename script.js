@@ -107,53 +107,6 @@ const showMoreProjects = () => {
     }
 };
 
-document.addEventListener("submit", async (e) => {
-    const form = e.target;
-    if (!form || form.id !== "contactForm") return;
-    e.preventDefault();
-
-    const status = document.getElementById("form-status");
-    const button = document.getElementById("contactSubmit");
-    const originalText = button ? button.textContent : "";
-
-    if (button) {
-        button.disabled = true;
-        button.textContent = "Sending...";
-    }
-    if (status) {
-        status.textContent = "Sending your message...";
-    }
-
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: {
-                Accept: "application/json"
-            }
-        });
-
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || result.success === "false" || result.success === false) {
-            throw new Error("Submission failed");
-        }
-
-        form.reset();
-        if (status) {
-            status.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
-        }
-    } catch (error) {
-        if (status) {
-            status.innerHTML = 'Something went wrong. Please email me directly at <a href="mailto:mahlarekarabo.702@gmail.com">mahlarekarabo.702@gmail.com</a>.';
-        }
-    } finally {
-        if (button) {
-            button.disabled = false;
-            button.textContent = originalText || "Send Message";
-        }
-    }
-});
-
 window.onpopstate = handleLocation;
 window.route = route;
 handleLocation();
