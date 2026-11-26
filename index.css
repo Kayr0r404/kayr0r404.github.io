@@ -131,3 +131,45 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 @media(max-width:650px) {
   .site-mark { width:42px; height:42px; flex-basis:42px; }
 }
+
+
+/* Ensure the nested monogram is not recoloured by the legacy
+   .site-mark span accent rule above. */
+.site-mark {
+  display: inline-flex;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  text-decoration: none;
+}
+.site-mark .logo-monogram {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #15171c;
+  color: #fff;
+  font: 800 31px/1 Arial, Helvetica, sans-serif;
+  letter-spacing: -3px;
+}
+.site-mark .logo-letter {
+  display: block;
+  color: #fff;
+  transform: translate(-1px, -1px) scaleX(.94);
+}
+.site-mark .logo-dot {
+  position: absolute;
+  right: 4px;
+  bottom: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a3e635;
+  box-shadow: 0 0 0 1px #15171c;
+}
+.site-mark:hover .logo-monogram { color: #fff; }
