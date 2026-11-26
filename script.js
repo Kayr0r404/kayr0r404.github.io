@@ -1,160 +1,69 @@
-function loadComponent(elementId, filePath) {
-    return fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-        })
-        .catch(error => console.error(`Error loading ${filePath}:`, error));
-}
+(() => {
+  const menuButton = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-window.addEventListener("load", () => {
-    loadComponent("footer", "./footer.html");
-    loadComponent("navbar", "./navbar.html").then(() => {
-        initHamburger();
+  if (menuButton && navLinks) {
+    menuButton.addEventListener("click", () => {
+      const expanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!expanded));
+      menuButton.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      navLinks.classList.toggle("is-open", !expanded);
     });
-})
 
-function initHamburger() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-    }
-    
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('.nav-links a')) {
-            if (navLinks) navLinks.classList.remove('active');
-            if (hamburger) hamburger.classList.remove('active');
-        }
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+      });
     });
-}
 
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        navLinks.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+      }
+    });
+  }
 
-const showMore = (elementId, pointsContainerId) => {
-    let points = document.getElementById(pointsContainerId);
-    let moreText = document.getElementById(elementId);
-    let showMoreButton = document.getElementById("show__more"); 
+  const filterButtons = document.querySelectorAll(".filter-button");
+  const projectCards = document.querySelectorAll(".project-card");
 
-    if (points.style.display === "none") {
-        moreText.style.display = "none";
-        points.style.display = "inline";
-        showMoreButton.style.display = "inline";
-    } else {
-        moreText.style.display = "block";
-        points.style.display = "none";
-        showMoreButton.style.display = "none";
-    }
-};
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
 
+      projectCards.forEach((card) => {
+        const visible = filter === "all" || card.dataset.category === filter;
+        card.classList.toggle("is-hidden", !visible);
+      });
+    });
+  });
 
-const route = (event) => {
-    event = event || window.event;
-    event.preventDefault();
+  const revealElements = document.querySelectorAll(".reveal");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Ensure we're getting the href from the <a> element
-    const href = event.currentTarget.getAttribute("href");
-    
-    window.history.pushState({}, "", href);
-    handleLocation();
-};
-
-const routes = {
-    404: "./404.html",
-    "/": "./home.html",
-    "/about": "./about.html",
-    "/contact": "./contact.html"
-};
-
-const handleLocation = async () => {
-    const path = window.location.pathname;
-    console.log("path", path)
-    const routePath = routes[path] || routes[404];
-    
-    try {
-        const response = await fetch(routePath);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+  if ("IntersectionObserver" in window && !reducedMotion) {
+    const observer = new IntersectionObserver((entries, activeObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          activeObserver.unobserve(entry.target);
         }
-        const html = await response.text();
-        document.getElementById("main__content").innerHTML = html;
-    } catch (error) {
-        console.error('Error loading page:', error);
-        // Optionally load the 404 page here
-        if (routePath !== routes[404]) {
-            const response = await fetch(routes[404]);
-            document.getElementById("main__content").innerHTML = await response.text();
-        }
-    }
-};
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
 
-const showMoreProjects = () => {
-    const more = document.getElementById("more-projects");
-    const btn = document.getElementById("projects-next-btn");
-    if (more) {
-        more.style.display = "block";
-    }
-    if (btn) {
-        btn.style.display = "none";
-    }
-};
+    revealElements.forEach((element) => observer.observe(element));
+  } else {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+  }
 
-document.addEventListener("submit", async (e) => {
-    const form = e.target;
-    if (!form || form.id !== "contactForm") return;
-    e.preventDefault();
-
-    const status = document.getElementById("form-status");
-    const button = document.getElementById("contactSubmit");
-    const originalText = button ? button.textContent : "";
-
-    if (button) {
-        button.disabled = true;
-        button.textContent = "Sending...";
-    }
-    if (status) {
-        status.textContent = "Sending your message...";
-    }
-
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: {
-                Accept: "application/json"
-            }
-        });
-
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || result.success === "false" || result.success === false) {
-            throw new Error("Submission failed");
-        }
-
-        form.reset();
-        if (status) {
-            status.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
-        }
-    } catch (error) {
-        if (status) {
-            status.innerHTML = 'Something went wrong. Please email me directly at <a href="mailto:mahlarekarabo.702@gmail.com">mahlarekarabo.702@gmail.com</a>.';
-        }
-    } finally {
-        if (button) {
-            button.disabled = false;
-            button.textContent = originalText || "Send Message";
-        }
-    }
-});
-
-window.onpopstate = handleLocation;
-window.route = route;
-handleLocation();
-
+  const year = document.getElementById("current-year");
+  if (year) year.textContent = new Date().getFullYear();
+})();
