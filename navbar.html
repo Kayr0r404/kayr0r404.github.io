@@ -1,15 +1,32 @@
-<nav id="nav__bar" aria-label="Main navigation">
-    <div class="logo"><a href="/" onclick="route(event)">KM<span>.</span><span class="brand-name">Karabo Mahlare</span></a></div>
-    <div class="nav-tools">
-        <ul class="nav-links">
-            <li><a href="/" onclick="route(event)">Home</a></li>
-            <li><a href="/about" onclick="route(event)">About</a></li>
-            <li><a href="/#projects" onclick="route(event)">Projects</a></li>
-            <li><a href="/#experience" onclick="route(event)">Experience</a></li>
-            <li><a href="https://drive.google.com/drive/folders/1Y_TB0Lmo50Vv2j7arpT3KwpSEH0UEmEe?usp=sharing" target="_blank" rel="noopener noreferrer">CV ↗</a></li>
-            <li><a href="/contact" onclick="route(event)">Contact</a></li>
-        </ul>
-        <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
-        <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-</nav>
+<aside class="sidebar" aria-label="Site navigation">
+  <div class="sidebar-top">
+    <a class="site-mark" href="/" onclick="route(event)">Karabo Mahlare<span>.</span></a>
+    <p class="sidebar-subtitle">Software developer<br>Johannesburg, South Africa</p>
+  </div>
+  <div class="sidebar-controls">
+    <span>Color</span>
+    <button class="color-swatch active" type="button" data-color="sage" aria-label="Sage accent"></button>
+    <button class="color-swatch blue" type="button" data-color="blue" aria-label="Blue accent"></button>
+    <button class="color-swatch rose" type="button" data-color="rose" aria-label="Rose accent"></button>
+    <span class="control-divider"></span>
+    <span>Theme</span>
+    <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">☼</button>
+  </div>
+  <nav class="side-nav">
+    <p class="nav-label">Explore</p>
+    <a href="/#top" onclick="route(event)">Home</a>
+    <a href="/#about" onclick="route(event)">About Me</a>
+    <a href="/#experience" onclick="route(event)">Experience</a>
+    <a href="/#projects" onclick="route(event)">Projects</a>
+    <a href="/#interests" onclick="route(event)">Interests & Notes</a>
+    <a href="/#education" onclick="route(event)">Education</a>
+    <a href="/#contact" onclick="route(event)">Contact</a>
+    <a href="/about" onclick="route(event)">Full Biography</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <a href="https://github.com/Kayr0r404" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/karabo-mahlare/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="mailto:mahlarekarabo.702@gmail.com">Email ↗</a>
+    <a href="https://drive.google.com/drive/folders/1Y_TB0Lmo50Vv2j7arpT3KwpSEH0UEmEe?usp=sharing" target="_blank" rel="noopener">Résumé ↗</a>
+  </div>
+</aside>
