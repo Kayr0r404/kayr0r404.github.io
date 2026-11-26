@@ -1,69 +1,30 @@
 (() => {
-  const menuButton = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if (menuButton && navLinks) {
-    menuButton.addEventListener("click", () => {
-      const expanded = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!expanded));
-      menuButton.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
-      navLinks.classList.toggle("is-open", !expanded);
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      toggle.setAttribute("aria-label", open ? "Open navigation" : "Close navigation");
+      nav.classList.toggle("open", !open);
     });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("is-open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open navigation");
-      });
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        navLinks.classList.remove("is-open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open navigation");
-      }
-    });
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+    }));
   }
-
-  const filterButtons = document.querySelectorAll(".filter-button");
-  const projectCards = document.querySelectorAll(".project-card");
-
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
-      filterButtons.forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-pressed", String(active));
-      });
-
-      projectCards.forEach((card) => {
-        const visible = filter === "all" || card.dataset.category === filter;
-        card.classList.toggle("is-hidden", !visible);
-      });
+  const buttons = document.querySelectorAll(".filter-button");
+  const cards = document.querySelectorAll(".project-card");
+  buttons.forEach((button) => button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    buttons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
     });
-  });
-
-  const revealElements = document.querySelectorAll(".reveal");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if ("IntersectionObserver" in window && !reducedMotion) {
-    const observer = new IntersectionObserver((entries, activeObserver) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          activeObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
-
-    revealElements.forEach((element) => observer.observe(element));
-  } else {
-    revealElements.forEach((element) => element.classList.add("is-visible"));
-  }
-
-  const year = document.getElementById("current-year");
+    cards.forEach((card) => card.classList.toggle("is-hidden", filter !== "all" && card.dataset.category !== filter));
+  }));
+  const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
