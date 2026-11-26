@@ -97,7 +97,7 @@ function applyTheme(theme) {
 }
 
 function applyColor(color) {
-  const allowedColors = ["sage", "blue", "rose"];
+  const allowedColors = ["sage", "blue", "rose", "purple", "pink", "orange", "green"];
   const selectedColor = allowedColors.includes(color) ? color : "sage";
   document.documentElement.dataset.color = selectedColor;
   document.querySelectorAll(".color-swatch").forEach(button => {
