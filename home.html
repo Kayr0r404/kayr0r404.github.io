@@ -82,111 +82,216 @@
 
 <section id="projects">
     <div class="section-header">
-        <h2 class="comic-title pink">Selected Projects</h2>
-        <p>Practical work and learning across backend engineering, data and AI.</p>
+        <h2 class="comic-title blue">Featured Projects</h2>
+        <p>Real-world applications showcasing distributed systems and backend engineering</p>
     </div>
 
     <div class="project__container">
-        <p>JAVA · DATABASES · SOFTWARE ENGINEERING</p>
-        <h1>Robot World</h1>
-        <div class="projects">
-            <div class="project-info">
-                <p>A Java-based robot simulation server with persistent world configuration. The project explores how an application can separate domain behaviour from database persistence.</p>
-                <ul>
-                    <li>Worked with Java 21, SQLite and HikariCP.</li>
-                    <li>Contributed to the database schema and persistence layer.</li>
-                    <li>Implemented world save/restore considerations without persisting robot runtime state.</li>
-                    <li>Worked with GitLab CI, Make and Docker in the team workflow.</li>
-                </ul>
-                <ul class="tech__stack"><li>Java 21</li><li>SQLite</li><li>HikariCP</li><li>Docker</li><li>GitLab CI</li></ul>
-                <a class="see-more" href="https://github.com/Kayr0r404" target="_blank" rel="noopener noreferrer">Find my projects on GitHub →</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="project__container">
-        <p>PYTHON · AUTHENTICATION · API DESIGN</p>
-        <h1>OddEase — Authentication Service</h1>
-        <div class="projects">
-            <div class="project-info">
-                <p>A FastAPI authentication service designed as a distinct identity boundary for a multi-service application. The wider architecture explores how services can rely on a dedicated authentication component while retaining responsibility for their own authorisation rules.</p>
-                <ul>
-                    <li>Implemented JWT-based access and refresh token flows.</li>
-                    <li>Worked with FastAPI, Pydantic and SQLModel, with exploration of MongoDB/Beanie.</li>
-                    <li>Designed the integration approach for protected routes in other services.</li>
-                </ul>
-                <ul class="tech__stack"><li>Python</li><li>FastAPI</li><li>JWT</li><li>SQLModel</li><li>PostgreSQL</li></ul>
-                <a class="see-more" href="https://github.com/Kayr0r404" target="_blank" rel="noopener noreferrer">Find my projects on GitHub →</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="project__container">
-        <p>JAVA · MESSAGING · EVENT-DRIVEN SYSTEMS</p>
-        <h1>LogisticsConnect</h1>
-        <div class="projects">
-            <div class="project-info">
-                <p>A parcel-tracking application exploring asynchronous communication for package-status updates. The system uses messaging to decouple the component that publishes an update from components that consume it.</p>
-                <ul>
-                    <li>Built backend functionality with Java and Javalin.</li>
-                    <li>Used ActiveMQ topics for package-status event distribution.</li>
-                    <li>Explored how a tracking hub can consume and expose status changes.</li>
-                </ul>
-                <ul class="tech__stack"><li>Java</li><li>Javalin</li><li>ActiveMQ</li><li>REST</li></ul>
-                <a class="see-more" href="https://github.com/Kayr0r404" target="_blank" rel="noopener noreferrer">Find my projects on GitHub →</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="project__container">
-        <p>PYTHON · RAG · DOCUMENT QUESTION ANSWERING</p>
-        <h1>Document Knowledge Assistant</h1>
-        <div class="projects">
-            <div class="project-info">
-                <p>A Streamlit-based experiment in retrieval-augmented generation (RAG), exploring how document content can be retrieved and supplied as context to a language model when answering questions.</p>
-                <ul>
-                    <li>Built an interactive application with Streamlit.</li>
-                    <li>Explored Gemini-powered responses grounded in retrieved document context.</li>
-                    <li>Worked with MongoDB Atlas as part of the retrieval workflow.</li>
-                </ul>
-                <ul class="tech__stack"><li>Python</li><li>Streamlit</li><li>Gemini</li><li>MongoDB Atlas</li></ul>
-                <a class="see-more" href="https://github.com/Kayr0r404" target="_blank" rel="noopener noreferrer">Find my projects on GitHub →</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="project__container">
-        <p>FULL STACK · JAVASCRIPT</p>
+        <p>★ Community Platform</p>
         <h1>Plus27</h1>
         <div class="projects">
             <div class="project-info">
-                <p>A web application project with a Next.js and React frontend. The work includes setting up the frontend application and developing its user-facing experience.</p>
-                <ul class="tech__stack"><li>Next.js</li><li>React</li><li>JavaScript</li></ul>
-                <a class="see-more" href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">View repository →</a>
+                <ul class="tech__stack">
+                    <li>Next.js</li>
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>Tailwind CSS</li>
+                    <li>FastAPI</li>
+                    <li>Python</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>Docker</li>
+                </ul>
+                <p><strong>Why I built Plus27</strong></p>
+                <p>
+                    I built Plus27 to create a digital home for local South African communities—a single, area-first
+                    platform where people can connect, trade, and find opportunities close to where they live. Instead
+                    of treating community life as separate activities spread across different apps and groups, Plus27
+                    brings them together in one place.
+                </p>
+                <p id="plus27__points" class="see-more" onclick="showMore('plus27__text', 'plus27__points')">
+                    ★ The problem I’m trying to solve →
+                </p>
+                <div style="display: none;" id="plus27__text">
+                    <p>
+                        Local information and opportunities are often fragmented and hard to trust: neighborhood
+                        discussions happen in one place, buying and selling in another, odd jobs are shared informally,
+                        and rental listings are mixed in with irrelevant results from far away. This makes it difficult
+                        for residents to discover what’s relevant to their area and for local vendors and service
+                        providers to gain visibility.
+                    </p>
+                    <p>
+                        Plus27 addresses this by giving each community its own hub for conversations, events, and
+                        groups, alongside a local marketplace, vendor profiles with reviews, an odd-jobs board, and
+                        rental listings—so people see what matters in their area by default, while still being able to
+                        explore other communities when needed.
+                    </p>
+                </div>
             </div>
+            <div class="img__container">
+                <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/Screenshot%202026-11-12%20122831.png" alt="Plus27 platform screenshot"
+                        loading="lazy" decoding="async" />
+                </a>
+            </div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">
+                <button data-text="View on GitHub">View on GitHub</button>
+            </a>
         </div>
     </div>
 
     <div class="project__container">
-        <p>DATA ENGINEERING · SQL · ANALYTICS</p>
-        <h1>SQL Data Warehouse</h1>
+        <p>★ AI / Machine Learning</p>
+        <h1>Intelligent RAG System</h1>
         <div class="projects">
             <div class="project-info">
-                <p>A data warehousing project focused on the foundations of analytical data systems: ingesting source data, transforming it, modelling it and preparing it for reporting and analysis.</p>
-                <ul class="tech__stack"><li>SQL</li><li>ETL</li><li>Data Modelling</li><li>Analytics</li></ul>
-                <a class="see-more" href="https://github.com/Kayr0r404/sql-data-warehouse-project" target="_blank" rel="noopener noreferrer">View repository →</a>
+                <ul class="tech__stack">
+                    <li>Python</li>
+                    <li>LangChain</li>
+                    <li>MongoDB Atlas</li>
+                    <li>Google Gemini</li>
+                    <li>Streamlit</li>
+                </ul>
+                <p>
+                    Production-ready Retrieval-Augmented Generation system that transforms static PDF documents
+                    into interactive, AI-powered knowledge bases. Eliminates hallucinations by grounding responses
+                    in verified private data.
+                </p>
+                <p id="x__points" class="see-more" onclick="showMore('x__text', 'x__points')">
+                    ★ Technical Deep Dive →
+                </p>
+                <div style="display: none;" id="x__text">
+                    <ul>
+                        <li>Hybrid PDF ingestion with custom web scraping</li>
+                        <li>MongoDB Atlas Vector Search for semantic similarity</li>
+                        <li>Google text-embedding-004 for deep understanding</li>
+                        <li>Expert persona engine with strict data grounding</li>
+                        <li>Real-time streaming responses</li>
+                    </ul>
+                </div>
             </div>
+            <div class="img__container">
+                <a href="https://theassistant.streamlit.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/RAG.png" alt="RAG Application" loading="lazy" decoding="async" />
+                </a>
+            </div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <a href="https://theassistant.streamlit.app/" target="_blank" rel="noopener noreferrer">
+                <button data-text="View Live Demo">View Live Demo</button>
+            </a>
         </div>
     </div>
 
     <div class="project__container">
-        <p>DATA ENGINEERING · EVENT STREAMING · TEAM PROJECT</p>
-        <h1>WeThinkCode_ Data Engineering Project</h1>
-        <div class="project-info">
-            <p>A collaborative learning project focused on designing and implementing a data engineering workflow. Current learning includes event-streaming concepts and using Redpanda with the Kafka API, alongside containerised development.</p>
-            <ul class="tech__stack"><li>Python</li><li>Redpanda</li><li>Kafka API</li><li>Docker</li><li>SQL</li></ul>
+        <p>★ Full-Stack E-Commerce</p>
+        <h1>tlik Marketplace</h1>
+        <div class="projects">
+            <div class="project-info">
+                <ul class="tech__stack">
+                    <li>React</li>
+                    <li>Flask</li>
+                    <li>MySQL</li>
+                    <li>Stripe</li>
+                </ul>
+                <p>
+                    Full-stack e-commerce platform with React frontend and Python backend. Features include
+                    user authentication, product management, shopping cart, wishlist, and secure payment processing.
+                </p>
+                <p id="proj__points" class="see-more" onclick="showMore('more__text', 'proj__points')">
+                    ★ Technical Deep Dive →
+                </p>
+                <div style="display: none;" id="more__text">
+                    <ul>
+                        <li>JWT authentication with secure token management</li>
+                        <li>SQLAlchemy ORM for efficient database operations</li>
+                        <li>Stripe payment gateway integration</li>
+                        <li>React Router for seamless navigation</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img__container">
+                <a href="https://tlik-client.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/tlik.png" alt="tlik E-commerce" loading="lazy" decoding="async" />
+                </a>
+            </div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+            <a href="https://tlik-client.onrender.com/" target="_blank" rel="noopener noreferrer">
+                <button data-text="View Project">View Project</button>
+            </a>
         </div>
     </div>
+
+    <div id="more-projects" style="display: none;">
+        <div class="project__container">
+            <p>★ Backend API</p>
+            <h1>Notes API Platform</h1>
+            <div class="projects">
+                <div class="project-info">
+                    <ul class="tech__stack">
+                        <li>Django REST</li>
+                        <li>React</li>
+                        <li>SQLite</li>
+                        <li>JWT</li>
+                    </ul>
+                    <p>
+                        RESTful API backend with Django and React frontend. Supports user authentication,
+                        CRUD operations for notes, and public/private sharing with permission-based access.
+                    </p>
+                </div>
+                <div class="img__container">
+                    <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/notesapp.png" alt="Notes App" loading="lazy" decoding="async" />
+                    </a>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener noreferrer">
+                    <button data-text="View Project">View Project</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="project__container">
+            <p>★ Full-Stack Platform</p>
+            <h1>TheQuide Author Platform</h1>
+            <div class="projects">
+                <div class="project-info">
+                    <ul class="tech__stack">
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Django</li>
+                        <li>Firebase</li>
+                        <li>MySQL</li>
+                    </ul>
+                    <p>
+                        Dynamic author platform for writers to showcase their work. Combines React frontend with
+                        Firebase real-time features and Django backend for robust content management.
+                    </p>
+                </div>
+                <div class="img__container">
+                    <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/thequide.png" alt="TheQuide Platform" loading="lazy"
+                            decoding="async" />
+                    </a>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">
+                    <button data-text="View on GitHub">View on GitHub</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; text-align: center;">
+        <button id="projects-next-btn" data-text="Next" onclick="showMoreProjects()">Next</button>
+    </div>
+
 </section>
 
 <section id="education">
