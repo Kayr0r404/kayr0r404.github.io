@@ -82,3 +82,52 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 #main__content { min-width:0; }
 @media(max-width:850px) { .sidebar { width:215px; } }
 @media(max-width:650px) { .sidebar { width:100%; } .app-shell { display:block; } }
+
+
+/* CSS-drawn K. monogram logo */
+.site-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  color: inherit;
+  text-decoration: none;
+}
+.site-mark:hover { text-decoration: none; }
+.logo-monogram {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #15171c;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+.logo-letter {
+  display: block;
+  transform: translate(-1px, -1px) scaleX(.94);
+}
+.logo-dot {
+  position: absolute;
+  right: 4px;
+  bottom: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a3e635;
+  box-shadow: 0 0 0 1px #15171c;
+}
+.site-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 7px; }
+@media(max-width:650px) {
+  .site-mark { width:42px; height:42px; flex-basis:42px; }
+}
