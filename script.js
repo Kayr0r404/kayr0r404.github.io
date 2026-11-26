@@ -88,19 +88,23 @@ function loadComponent(id, path) {
 function applyTheme(theme) {
   const selectedTheme = theme === "dark" ? "dark" : "light";
   document.documentElement.dataset.theme = selectedTheme;
+  document.documentElement.classList.toggle("is-dark", selectedTheme === "dark");
+  document.documentElement.classList.toggle("is-light", selectedTheme === "light");
   const button = document.querySelector(".theme-toggle");
   if (button) {
-    button.textContent = selectedTheme === "dark" ? "☼" : "☾";
     button.setAttribute("aria-label", selectedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme");
     button.setAttribute("aria-pressed", String(selectedTheme === "dark"));
   }
 }
 
+const COLOR_THEMES = ["yellow", "blue", "lavender", "pink", "green"];
+
 function applyColor(color) {
-  const allowedColors = ["sage", "blue", "rose"];
-  const selectedColor = allowedColors.includes(color) ? color : "sage";
+  const selectedColor = COLOR_THEMES.includes(color) ? color : "yellow";
   document.documentElement.dataset.color = selectedColor;
-  document.querySelectorAll(".color-swatch").forEach(button => {
+  const current = document.getElementById("color-current");
+  if (current) current.style.backgroundColor = "var(--theme-" + selectedColor + ")";
+  document.querySelectorAll(".color-swatch, .dropdown-option").forEach(button => {
     const active = button.dataset.color === selectedColor;
     button.classList.toggle("active", active);
     button.setAttribute("aria-pressed", String(active));
@@ -143,9 +147,10 @@ function initSidebar() {
     });
   }
 
-  document.querySelectorAll(".color-swatch").forEach(button => {
+  document.querySelectorAll(".color-swatch, .dropdown-option").forEach(button => {
     button.addEventListener("click", () => {
       applyColor(button.dataset.color);
+      closeColorMenu();
       try {
         localStorage.setItem("portfolio-color", button.dataset.color);
       } catch (error) {
@@ -153,6 +158,29 @@ function initSidebar() {
       }
     });
   });
+
+  // Color dropdown
+  const colorButton = document.getElementById("color-button");
+  const colorResults = document.getElementById("color-results");
+  function closeColorMenu() {
+    if (!colorButton || !colorResults) return;
+    colorResults.hidden = true;
+    colorButton.setAttribute("aria-expanded", "false");
+  }
+  if (colorButton && colorResults) {
+    colorButton.addEventListener("click", event => {
+      event.stopPropagation();
+      const open = colorResults.hidden;
+      colorResults.hidden = !open;
+      colorButton.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", event => {
+      if (!colorResults.hidden && !event.target.closest("#color-picker")) closeColorMenu();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeColorMenu();
+    });
+  }
 
   const year = document.getElementById("copyright-year");
   if (year) year.textContent = new Date().getFullYear();
@@ -240,8 +268,8 @@ function handleInternalNavigation(event) {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-  let theme = "light";
-  let color = "sage";
+  let theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  let color = "yellow";
 
   try {
     theme = localStorage.getItem("portfolio-theme") || theme;
@@ -249,6 +277,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     // Defaults are used when browser storage is unavailable.
   }
+  if (!COLOR_THEMES.includes(color)) color = "yellow";
 
   applyTheme(theme);
   applyColor(color);
