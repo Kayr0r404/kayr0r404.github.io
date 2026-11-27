@@ -1,69 +1,79 @@
 <article class="page-wrap">
-  <p class="eyebrow">PROJECT CASE STUDY · EVENT-DRIVEN APPLICATION</p>
+  <p class="eyebrow">PROJECT CASE STUDY · EVENT-DRIVEN SYSTEM · SCAFFOLD</p>
   <h1>LogisticsConnect</h1>
   <p class="lead">
-    A parcel-tracking application exploring asynchronous status updates and
-    real-time communication.
+    A Java multi-service project scaffold for parcel hub ingestion, delay-stage
+    tracking, transit estimates and asynchronous status notifications.
   </p>
   <section class="case-section">
-    <h2>The problem</h2>
+    <h2>Problem and design goal</h2>
     <p>
-      A parcel's status changes over time. Consumers of that information should
-      be able to react to updates without tightly coupling every component to
-      the tracking service.
+      Parcel transit information spans hub data, delay conditions and estimated
+      arrival calculations. The repository explores separating these
+      responsibilities into independently runnable services and replacing
+      selected synchronous calls with message-based communication.
     </p>
   </section>
   <section class="case-section">
-    <h2>What I built</h2>
+    <h2>Architecture defined by the repository</h2>
+    <div class="diagram"><div class="flow-diagram">
+      <div class="flow-node">hubs-global.csv</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Ingestion service · clean and expose hub data</div>
+      <span class="flow-arrow">↓ REST</span>
+      <div class="flow-node">Hub service · place / sorting-centre data</div>
+      <span class="flow-arrow">↘ REST</span>
+      <div class="flow-node">Transit service · ETA calculation</div>
+      <span class="flow-arrow">↑ status events</span>
+      <div class="flow-node">Delay-stage service · ActiveMQ topic producer</div>
+      <span class="flow-arrow">↓ topic subscription</span>
+      <div class="flow-node">Alert bot · notification consumer (stretch goal)</div>
+    </div></div>
     <p>
-      The project uses a Javalin application and ActiveMQ topic-based messaging
-      for package status events, with a hub endpoint for real-time client
-      updates.
+      The README describes a progression: CSV ingestion, synchronous REST
+      integration between services, decoupling delay updates through the
+      <code>package-status-topic</code>, then an alerting consumer. ActiveMQ
+      Classic is provisioned through the shared Docker Compose file.
+    </p>
+    <p>
+      <strong>Implementation status:</strong> the repository README explicitly
+      describes the project as a scaffold with build files, Javalin bootstrap
+      code and TODOs; business logic is not yet implemented. The diagram
+      therefore describes the intended service contracts, not a completed
+      end-to-end production workflow.
     </p>
   </section>
   <section class="case-section">
-    <h2>Architecture at a glance</h2>
-    <div class="diagram">
-      <div class="flow-diagram">
-        <div class="flow-node">Parcel tracking API</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">ActiveMQ status topic</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Status event consumer</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Real-time client hub</div>
-      </div>
-    </div>
-    <p class="note">
-      Conceptual architecture overview; details are intentionally limited to the
-      implementation information available.
+    <h2>Technology and service boundaries</h2>
+    <ul>
+      <li><strong>Runtime:</strong> Java 17 and Maven.</li>
+      <li><strong>HTTP services:</strong> Javalin 5.6.3 with Jackson for JSON.</li>
+      <li><strong>Messaging:</strong> ActiveMQ Classic 5.18.3 using the JMS client.</li>
+      <li><strong>Services:</strong> ingestion, hub, delay-stage, transit and alert-bot modules.</li>
+      <li><strong>Local broker:</strong> Docker Compose exposing OpenWire and the broker console.</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Architecture considerations</h2>
+    <p>
+      The service split creates clear domain responsibilities, but asynchronous
+      messaging introduces delivery semantics that still need implementation:
+      durable subscriptions, retries, duplicate handling, event identifiers,
+      ordering, dead-letter handling and observability. These are design
+      considerations for the next implementation stages, not claims that they
+      are already complete.
     </p>
   </section>
   <section class="case-section">
     <h2>My contribution</h2>
     <p>
-      Worked on the service integration and event-driven design, including
-      package-status topic concepts and application endpoint configuration.
+      Worked on the service design and integration concepts, including the
+      package-status topic and the separation between hub, delay and transit
+      responsibilities.
     </p>
   </section>
   <section class="case-section">
-    <h2>Technology</h2>
-    <p>Java · Javalin · ActiveMQ · messaging topics · real-time hubs</p>
-  </section>
-  <section class="case-section">
-    <h2>What I learned</h2>
-    <p>
-      Messaging allows producers and consumers to evolve more independently, but
-      introduces operational concerns: delivery, retries, duplicate messages,
-      ordering and consumer failure handling.
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>Explore</h2>
-    <p>
-      <a href="https://github.com/Kayr0r404" target="_blank" rel="noopener"
-        >GitHub profile →</a
-      >
-    </p>
+    <h2>Repository</h2>
+    <p><a href="https://github.com/Kayr0r404/sin-001-logisticsconnect" target="_blank" rel="noopener">View LogisticsConnect on GitHub →</a></p>
   </section>
 </article>

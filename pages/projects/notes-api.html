@@ -2,68 +2,72 @@
   <p class="eyebrow">PROJECT CASE STUDY · BACKEND API</p>
   <h1>Notes API Platform</h1>
   <p class="lead">
-    A notes application combining a Django REST backend and React frontend, with
-    authentication and controlled sharing.
+    A React notes client backed by Django REST Framework, with JWT-based
+    authentication and private/public note endpoints.
   </p>
   <section class="case-section">
-    <h2>The problem</h2>
+    <h2>Problem and product scope</h2>
     <p>
-      Users need to create and manage notes while controlling whether each note
-      remains private or can be shared publicly. Access rules must be enforced
-      by the backend, not only hidden in the interface.
+      Users need to create, retrieve and manage notes while controlling which
+      notes remain private and which can be viewed publicly. Access control must
+      be enforced by the API, not only by the frontend.
     </p>
   </section>
   <section class="case-section">
-    <h2>What I built</h2>
+    <h2>Architecture</h2>
+    <div class="diagram"><div class="flow-diagram">
+      <div class="flow-node">React 19 client · React Router</div>
+      <span class="flow-arrow">↓ HTTP / JSON</span>
+      <div class="flow-node">Django 5.1 · Django REST Framework</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">SimpleJWT · HttpOnly access / refresh cookies</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Authenticated note and user views</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Django ORM · SQLite (configured database)</div>
+    </div></div>
     <p>
-      The application provides authentication, CRUD operations and
-      public/private sharing with permission-aware access. The React client
-      consumes the Django REST API and uses JWT-based authentication.
+      The React application handles the user experience and calls the Django
+      API. Django REST Framework provides registration, token, note and public
+      note endpoints. The settings configure both a cookie-aware JWT
+      authentication class and SimpleJWT authentication, with authenticated
+      access as the default permission policy.
     </p>
   </section>
   <section class="case-section">
-    <h2>Architecture at a glance</h2>
-    <div class="diagram">
-      <div class="flow-diagram">
-        <div class="flow-node">React client</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">JWT-authenticated API</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Permission checks</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">SQLite persistence</div>
-      </div>
-    </div>
-    <p class="note">
-      Conceptual architecture overview; details are intentionally limited to the
-      implementation information available.
+    <h2>Technology and responsibilities</h2>
+    <ul>
+      <li><strong>Frontend:</strong> React 19 and React Router 7.</li>
+      <li><strong>API:</strong> Django 5.1.5 and Django REST Framework 3.16.</li>
+      <li><strong>Authentication:</strong> SimpleJWT with access/refresh tokens stored in HttpOnly cookies.</li>
+      <li><strong>Persistence:</strong> Django ORM with SQLite configured in project settings.</li>
+    </ul>
+    <p>
+      The dependency file includes MySQL and SQLAlchemy packages, but the
+      checked-in Django settings configure SQLite as the active database. This
+      case study describes the configured application rather than assuming a
+      MySQL deployment.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Architecture considerations</h2>
+    <p>
+      The important boundary is between authentication and note authorization.
+      The API should consistently check ownership for private notes and expose
+      public notes through an explicitly public query path. Cookie-based JWT
+      authentication also requires deliberate CSRF, CORS, secure-cookie and
+      token-refresh handling across local and deployed environments.
     </p>
   </section>
   <section class="case-section">
     <h2>My contribution</h2>
     <p>
-      Worked on the full-stack notes platform, including backend API
-      functionality and integration with the React client.
+      Built the notes application across the React client and Django backend,
+      including authentication flows and note-management endpoints.
     </p>
   </section>
   <section class="case-section">
-    <h2>Technology</h2>
-    <p>Django REST Framework · React · SQLite · JWT</p>
-  </section>
-  <section class="case-section">
-    <h2>What I learned</h2>
-    <p>
-      This project highlights the importance of enforcing authorization at the
-      API boundary, modelling ownership and visibility clearly, and testing
-      access-control cases as carefully as happy paths.
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>Explore</h2>
-    <p>
-      <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener"
-        >Live project →</a
-      >
-    </p>
+    <h2>Repository</h2>
+    <p><a href="https://github.com/Kayr0r404/notes_app" target="_blank" rel="noopener">View Notes API on GitHub →</a></p>
   </section>
 </article>

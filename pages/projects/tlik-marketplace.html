@@ -2,72 +2,69 @@
   <p class="eyebrow">PROJECT CASE STUDY · FULL-STACK E-COMMERCE</p>
   <h1>tlik Marketplace</h1>
   <p class="lead">
-    A full-stack marketplace application with product discovery and core
-    shopping workflows.
+    A clothing and home-utilities storefront with a React client and a Flask
+    backend responsible for API workflows, identity and persistence.
   </p>
   <section class="case-section">
-    <h2>The problem</h2>
+    <h2>Problem and product scope</h2>
     <p>
-      An online marketplace needs more than a product catalogue: users need to
-      discover products, manage a cart and wishlist, authenticate and complete
-      payment flows.
+      An online store needs product discovery, account management, cart and
+      wishlist workflows, order handling and a payment boundary that is kept
+      separate from the storefront interface.
     </p>
   </section>
   <section class="case-section">
-    <h2>What I built</h2>
+    <h2>Architecture</h2>
+    <div class="diagram"><div class="flow-diagram">
+      <div class="flow-node">React storefront · React Router</div>
+      <span class="flow-arrow">↓ HTTP / JSON</span>
+      <div class="flow-node">Flask application · API Blueprint</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">User · product · cart · order · wishlist endpoints</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">SQLAlchemy DBStorage / session</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">MySQL relational database</div>
+      <span class="flow-arrow">↔ payment integration</span>
+      <div class="flow-node">Stripe</div>
+    </div></div>
     <p>
-      The project combines a React client with a Flask backend, MySQL
-      persistence and Stripe payment integration. The application covers
-      authentication, product management, cart, wishlist and checkout
-      capabilities.
+      The React application is the presentation layer. The Flask server
+      registers a versioned API blueprint, initializes JWT handling and
+      application storage, and exposes resource workflows. SQLAlchemy-backed
+      DBStorage manages relational records; Stripe is integrated as an external
+      payment provider.
     </p>
   </section>
   <section class="case-section">
-    <h2>Architecture at a glance</h2>
-    <div class="diagram">
-      <div class="flow-diagram">
-        <div class="flow-node">React storefront</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Flask REST API</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">SQLAlchemy data access</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">MySQL database</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Stripe payment flow</div>
-      </div>
-    </div>
-    <p class="note">
-      Conceptual architecture overview; details are intentionally limited to the
-      implementation information available.
+    <h2>Technology and responsibilities</h2>
+    <ul>
+      <li><strong>Frontend:</strong> React, React Router, Axios and Bulma.</li>
+      <li><strong>Backend:</strong> Flask 3 with a Blueprint-based API.</li>
+      <li><strong>Identity:</strong> Flask-JWT-Extended and Flask-Bcrypt.</li>
+      <li><strong>Persistence:</strong> SQLAlchemy and MySQL.</li>
+      <li><strong>Payments:</strong> Stripe integration.</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Architecture considerations</h2>
+    <p>
+      The API boundary keeps database access and payment-provider calls out of
+      the browser. Important areas to strengthen include request validation,
+      explicit service/repository boundaries, least-privilege CORS settings,
+      idempotent payment handling and reconciliation between local order state
+      and Stripe payment state.
     </p>
   </section>
   <section class="case-section">
     <h2>My contribution</h2>
     <p>
-      Worked across the full-stack application, connecting frontend workflows
-      with backend API and persistence functionality.
+      Worked across the React client and Flask backend, connecting storefront
+      workflows to authentication, data persistence and payment integration.
     </p>
   </section>
   <section class="case-section">
-    <h2>Technology</h2>
-    <p>React · Flask · Python · MySQL · SQLAlchemy · Stripe</p>
-  </section>
-  <section class="case-section">
-    <h2>What I learned</h2>
-    <p>
-      E-commerce workflows require careful handling of identity, product state,
-      cart consistency and payment boundaries. Payment-provider integration
-      should be treated as a distinct responsibility, not just another CRUD
-      endpoint.
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>Explore</h2>
-    <p>
-      <a href="https://tlik-client.onrender.com/" target="_blank" rel="noopener"
-        >Live project →</a
-      >
-    </p>
+    <h2>Repository</h2>
+    <p><a href="https://github.com/Kayr0r404/tlik" target="_blank" rel="noopener">View tlik on GitHub →</a></p>
   </section>
 </article>

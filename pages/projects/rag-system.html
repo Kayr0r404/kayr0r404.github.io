@@ -1,79 +1,79 @@
 <article class="page-wrap">
   <p class="eyebrow">PROJECT CASE STUDY · APPLIED AI · KNOWLEDGE RETRIEVAL</p>
-  <h1>Intelligent RAG System</h1>
+  <h1>RAG Assistant</h1>
   <p class="lead">
-    A document-based assistant that makes information in PDF files easier to
-    search and explore using retrieval-augmented generation.
+    A Streamlit application that indexes uploaded documents and URLs, retrieves
+    relevant passages from a vector index and uses Gemini to answer questions
+    grounded in that context.
   </p>
   <section class="case-section">
-    <h2>The problem</h2>
+    <h2>Problem and workflow</h2>
     <p>
-      A language model alone may not know the contents of a user's private
-      documents. The application needs a way to ingest source material, retrieve
-      relevant passages and ground responses in that material.
+      A language model does not automatically know the contents of a user's
+      private documents. The application creates a retrieval path that makes
+      document content available to the model at question time.
     </p>
   </section>
   <section class="case-section">
-    <h2>What I built</h2>
+    <h2>Architecture</h2>
+    <div class="diagram"><div class="flow-diagram">
+      <div class="flow-node">Streamlit UI · upload PDF / provide URL</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">UniversalPDFLoader · text extraction</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Chunking · Gemini embeddings</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Pinecone vector index · tenant namespace</div>
+      <span class="flow-arrow">↓ query</span>
+      <div class="flow-node">Top-k vector retrieval · retrieved context</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Gemini answer generation</div>
+    </div></div>
     <p>
-      The Streamlit application accepts PDF documents, processes their content,
-      stores searchable representations and uses retrieval to provide context to
-      a Gemini-powered response. MongoDB Atlas Vector Search supports semantic
-      retrieval.
+      The Streamlit interface calls a GeminiRAG orchestration class. Ingestion
+      extracts document text, splits it into chunks, embeds each chunk with
+      Gemini and upserts vectors into Pinecone under an organization namespace.
+      At query time, the query is embedded, the most relevant chunks are
+      retrieved and their text is passed to Gemini as context.
     </p>
   </section>
   <section class="case-section">
-    <h2>Architecture at a glance</h2>
-    <div class="diagram">
-      <div class="flow-diagram">
-        <div class="flow-node">PDF upload</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Parse & chunk documents</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Create embeddings</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Atlas vector search</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Gemini response with retrieved context</div>
-      </div>
-    </div>
-    <p class="note">
-      Conceptual architecture overview; details are intentionally limited to the
-      implementation information available.
+    <h2>Technology and responsibilities</h2>
+    <ul>
+      <li><strong>Interface:</strong> Streamlit.</li>
+      <li><strong>Document ingestion:</strong> UniversalPDFLoader, PDF/URL loading and text chunking.</li>
+      <li><strong>Embeddings and generation:</strong> Google Gemini API.</li>
+      <li><strong>Vector retrieval:</strong> Pinecone serverless index with namespace separation.</li>
+      <li><strong>Observability:</strong> Langfuse tracing around retrieval and generation operations.</li>
+      <li><strong>Packaging:</strong> Docker support.</li>
+    </ul>
+    <p>
+      The repository README labels FastAPI/Inngest and MongoDB Atlas as work in
+      progress. They are not shown as part of the active request path in this
+      case study. The implementation uses Pinecone, not MongoDB Atlas Vector
+      Search.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Architecture considerations</h2>
+    <p>
+      Retrieval quality depends on document parsing, chunk boundaries,
+      embedding consistency, namespace isolation and retrieval relevance. The
+      current implementation uses a simple paragraph-based chunking strategy
+      and top-five vector retrieval; production hardening would add evaluation
+      datasets, source citations, ingestion status tracking, retries and
+      tenant-level access controls around document operations.
     </p>
   </section>
   <section class="case-section">
     <h2>My contribution</h2>
     <p>
-      Built the RAG application and worked with document ingestion, vector
-      search and model integration. The project uses the `sample_mflix.ragpdf`
-      database/collection context in Atlas and was containerised for deployment.
+      Built the RAG application and integrated document ingestion, Gemini
+      embeddings and generation, Pinecone retrieval and Langfuse tracing.
     </p>
   </section>
   <section class="case-section">
-    <h2>Technology</h2>
-    <p>
-      Python · Streamlit · LangChain · Google Gemini · MongoDB Atlas Vector
-      Search · Docker
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>What I learned</h2>
-    <p>
-      RAG quality depends on the full retrieval pipeline: parsing, chunking,
-      embedding, indexing, retrieval and prompt construction. A fluent answer is
-      not necessarily a grounded answer; source relevance and evaluation matter.
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>Explore</h2>
-    <p>
-      <a
-        href="https://theassistant.streamlit.app/"
-        target="_blank"
-        rel="noopener"
-        >Live application →</a
-      >
-    </p>
+    <h2>Repository</h2>
+    <p><a href="https://github.com/Kayr0r404/RAG__APP" target="_blank" rel="noopener">View RAG Assistant on GitHub →</a></p>
   </section>
 </article>

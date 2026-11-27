@@ -12,8 +12,6 @@ const routes = {
   "/projects/tlik-marketplace/": "/pages/projects/tlik-marketplace.html",
   "/projects/notes-api/": "/pages/projects/notes-api.html",
   "/projects/thequide/": "/pages/projects/thequide.html",
-  "/projects/robot-world/": "/pages/projects/robot-world.html",
-  "/projects/oddease/": "/pages/projects/oddease.html",
   "/projects/logisticsconnect/": "/pages/projects/logisticsconnect.html",
   "/series/redpanda-kafka/": "/pages/series/redpanda-kafka.html",
   "/series/backend-services/": "/pages/series/backend-services.html",
@@ -34,8 +32,6 @@ const pageTitles = {
   "/projects/tlik-marketplace/": "tlik Marketplace — Project Case Study",
   "/projects/notes-api/": "Notes API Platform — Project Case Study",
   "/projects/thequide/": "TheQuide — Project Case Study",
-  "/projects/robot-world/": "Robot World — Project Case Study",
-  "/projects/oddease/": "OddEase — Project Case Study",
   "/projects/logisticsconnect/": "LogisticsConnect — Project Case Study",
   "/series/redpanda-kafka/": "Redpanda for Application Developers",
   "/series/backend-services/": "Backend Services Across Languages",
@@ -66,10 +62,6 @@ const pageDescriptions = {
   "/projects/notes-api/":
     "Notes API Platform case study: authenticated notes and public or private sharing.",
   "/projects/thequide/": "TheQuide case study: an author and content platform.",
-  "/projects/robot-world/":
-    "Robot World case study: Java, SQLite persistence, clean code and containerised CI/CD.",
-  "/projects/oddease/":
-    "OddEase case study: a FastAPI authentication service and cross-language service architecture.",
   "/projects/logisticsconnect/":
     "LogisticsConnect case study: parcel tracking and event-driven status updates.",
   "/series/redpanda-kafka/":
