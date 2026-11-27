@@ -1,71 +1,101 @@
-<article class="page-wrap">
+<article class="page-wrap projects-page">
   <p class="eyebrow">PROJECTS · VERIFIED REPOSITORIES</p>
   <h1>Selected work, grounded in the code.</h1>
   <p class="lead">
-    These case studies link to repositories on my GitHub profile. Each one
-    describes the architecture and technologies visible in the codebase,
-    distinguishing implemented components from scaffolding and planned work.
+    A selection of software projects, with case studies and source repositories.
+    Architecture notes distinguish implemented components from scaffolding and
+    work that is not yet verified.
   </p>
-  <div class="project-directory">
-    <a href="/projects/plus27/">
-      <span class="entry-meta">COMMUNITY PLATFORM</span>
+
+  <div class="project-directory" aria-label="Project repository directory">
+    <article class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-category">Community platform</span>
+        <span class="project-card-source">GitHub</span>
+      </div>
       <h2>Plus27</h2>
-      <p>
-        A community platform with a Next.js frontend and a FastAPI backend
-        supporting identity, users and data persistence.
-      </p>
-      <span>Next.js · React · TypeScript · FastAPI · PostgreSQL · MongoDB</span>
-    </a>
-    <a href="/projects/rag-system/">
-      <span class="entry-meta">APPLIED AI · RETRIEVAL</span>
+      <p>A community platform with a Next.js frontend and a FastAPI backend supporting identity, users and data persistence.</p>
+      <p class="project-card-stack">Next.js · React · TypeScript · FastAPI · PostgreSQL · MongoDB</p>
+      <nav class="project-card-links" aria-label="Plus27 links">
+        <a href="/projects/plus27/">Case study</a>
+        <a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener noreferrer">Source</a>
+      </nav>
+    </article>
+
+    <article class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-category">Applied AI · Retrieval</span>
+        <span class="project-card-source">GitHub</span>
+      </div>
       <h2>RAG Assistant</h2>
-      <p>
-        A document-grounded assistant that ingests PDFs and URLs, retrieves
-        relevant passages and generates answers with Gemini.
-      </p>
-      <span>Python · Streamlit · Gemini · Pinecone · Langfuse</span>
-    </a>
-    <a href="/projects/tlik-marketplace/">
-      <span class="entry-meta">E-COMMERCE</span>
+      <p>A document-grounded assistant that ingests PDFs and URLs, retrieves relevant passages and generates answers with Gemini.</p>
+      <p class="project-card-stack">Python · Streamlit · Gemini · Pinecone · Langfuse</p>
+      <nav class="project-card-links" aria-label="RAG Assistant links">
+        <a href="/projects/rag-system/">Case study</a>
+        <a href="https://github.com/Kayr0r404/RAG__APP" target="_blank" rel="noopener noreferrer">Source</a>
+      </nav>
+    </article>
+
+    <article class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-category">E-commerce</span>
+        <span class="project-card-source">GitHub</span>
+      </div>
       <h2>tlik Marketplace</h2>
-      <p>
-        A React storefront backed by Flask APIs, relational persistence, JWT
-        authentication and Stripe integration.
-      </p>
-      <span>React · Flask · SQLAlchemy · MySQL · Stripe</span>
-    </a>
-    <a href="/projects/notes-api/">
-      <span class="entry-meta">BACKEND API</span>
+      <p>A React storefront backed by Flask APIs, relational persistence, JWT authentication and Stripe integration.</p>
+      <p class="project-card-stack">React · Flask · SQLAlchemy · MySQL · Stripe</p>
+      <nav class="project-card-links" aria-label="tlik Marketplace links">
+        <a href="/projects/tlik-marketplace/">Case study</a>
+        <a href="https://github.com/Kayr0r404/tlik" target="_blank" rel="noopener noreferrer">Source</a>
+      </nav>
+    </article>
+
+    <article class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-category">Backend API</span>
+        <span class="project-card-source">GitHub</span>
+      </div>
       <h2>Notes API Platform</h2>
-      <p>
-        A notes application with a React client, Django REST endpoints, JWT
-        cookie authentication and private/public note workflows.
-      </p>
-      <span>React · Django REST Framework · SimpleJWT · SQLite</span>
-    </a>
-    <a href="/projects/thequide/">
-      <span class="entry-meta">AUTHOR PLATFORM · REPOSITORY REVIEW</span>
+      <p>A notes application with a React client, Django REST endpoints, JWT cookie authentication and private/public note workflows.</p>
+      <p class="project-card-stack">React · Django REST Framework · SimpleJWT · SQLite</p>
+      <nav class="project-card-links" aria-label="Notes API Platform links">
+        <a href="/projects/notes-api/">Case study</a>
+        <a href="https://github.com/Kayr0r404/notes_app" target="_blank" rel="noopener noreferrer">Source</a>
+      </nav>
+    </article>
+
+    <article class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-category">Author platform</span>
+        <span class="project-card-source">GitHub</span>
+      </div>
       <h2>TheQuide</h2>
-      <p>
-        An author-platform project with a GitHub repository; its current
-        repository contents do not expose application source code for a reliable
-        architecture review.
-      </p>
-      <span>Architecture and implementation details not verified</span>
-    </a>
-    <a href="/projects/logisticsconnect/">
-      <span class="entry-meta">EVENT-DRIVEN SYSTEM · SCAFFOLD</span>
+      <p>An author-platform project. The repository is available, but its current contents do not expose application source code for a reliable architecture review.</p>
+      <p class="project-card-stack">Architecture and implementation details not verified</p>
+      <nav class="project-card-links" aria-label="TheQuide links">
+        <a href="/projects/thequide/">Case study</a>
+        <a href="https://github.com/Kayr0r404/TheQuide" target="_blank" rel="noopener noreferrer">Source</a>
+      </nav>
+    </article>
+
+    <article class="project-card">
+      <div class="project-card-top">
+        <span class="project-card-category">Event-driven system · Scaffold</span>
+        <span class="project-card-source">GitHub</span>
+      </div>
       <h2>LogisticsConnect</h2>
-      <p>
-        A multi-service Java project scaffold defining parcel-hub, delay-stage,
-        transit and messaging boundaries.
-      </p>
-      <span>Java 17 · Javalin · ActiveMQ Classic · Maven</span>
-    </a>
+      <p>A multi-service Java project scaffold defining parcel-hub, delay-stage, transit and messaging boundaries.</p>
+      <p class="project-card-stack">Java 17 · Javalin · ActiveMQ Classic · Maven</p>
+      <nav class="project-card-links" aria-label="LogisticsConnect links">
+        <a href="/projects/logisticsconnect/">Case study</a>
+        <a href="https://github.com/Kayr0r404/sin-001-logisticsconnect" target="_blank" rel="noopener noreferrer">Source</a>
+      </nav>
+    </article>
   </div>
+
   <p class="note">
     Project entries are kept only when a matching GitHub repository can be
-    verified. Architecture notes are based on the repository contents and call
-    out incomplete or planned components explicitly.
+    verified. Architecture notes are based on repository contents and call out
+    incomplete or unverified components explicitly.
   </p>
 </article>
