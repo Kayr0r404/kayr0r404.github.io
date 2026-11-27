@@ -20,6 +20,7 @@
   --theme-green: #2b9476; --theme-yellow: #b26a34; --yellow: #ffce64;
   --color-primary: var(--theme-yellow);
   --color-highlighted: var(--yellow);
+  --logo-tile-background: #202025;
 
   /* fonts */
   --font-family: -apple-system, BlinkMacSystemFont, "Google Sans Flex Variable", Helvetica, Arial, sans-serif;
@@ -129,6 +130,7 @@
   color-scheme: dark;
   --theme-blue: #6db3f5; --theme-lavender: #e5aaf5; --theme-pink: #f2777a;
   --theme-green: #94d294; --theme-yellow: #fede91; --yellow: #ffd479;
+  --logo-tile-background: #303036;
   --color-background: var(--gray-9);
   --color-background-alternate: var(--gray-11);
   --color-background-sidebar: var(--gray-9);
@@ -260,7 +262,52 @@ button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 
   text-decoration: none;
 }
 .site-mark:hover { text-decoration: none; color: var(--color-text-emphasized); }
-.site-mark span { color: var(--color-primary); }
+/* CSS-only K monogram. The tile stays high-contrast while its dot follows the selected accent theme. */
+.site-mark.logo-mark {
+  align-items: center;
+  background: var(--logo-tile-background);
+  border: 1px solid color-mix(in srgb, var(--color-text-emphasized) 14%, transparent);
+  border-radius: 6px;
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 36px;
+  height: 36px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 36px;
+}
+.site-mark.logo-mark::before {
+  color: #fff;
+  content: "K";
+  font-family: var(--font-family-heading);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -.09em;
+  line-height: 1;
+  transform: translate(-1px, -1px);
+}
+.site-mark.logo-mark::after {
+  background: var(--color-primary);
+  border: 1px solid var(--logo-tile-background);
+  border-radius: 50%;
+  bottom: 4px;
+  content: "";
+  height: 7px;
+  position: absolute;
+  right: 4px;
+  width: 7px;
+}
+.site-mark.logo-mark:hover {
+  background: var(--logo-tile-background);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.site-mark.logo-mark:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
 .navbar-logo { height: 20px; min-height: 20px; min-width: 20px; width: 20px; }
 .flex-align-center { display: flex; align-items: center; }
 .gap { gap: .5rem; }
