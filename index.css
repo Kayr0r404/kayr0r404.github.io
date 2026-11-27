@@ -2459,3 +2459,33 @@ a.footer-link:hover .footer-chev {
     padding: 15px;
   }
 }
+
+
+/* Verified hosted project destinations */
+.projects-page .project-card-links a.project-live-link {
+  align-items: center;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  color: #fff;
+  display: inline-flex;
+  gap: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+.projects-page .project-card-links a.project-live-link:hover {
+  background: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.projects-page .project-card-links a.project-live-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
