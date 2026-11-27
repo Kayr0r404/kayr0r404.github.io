@@ -253,8 +253,6 @@ function initReveal() {
 async function handleLocation({ focusMain = false } = {}) {
   const requestId = ++navigationSequence;
   const path = normalizePath(window.location.pathname);
-  // pages rendered directly (not router-loaded) keep their own content
-  if (path === "/pages/cv.html/") return;
   const target = routes[path] || "/pages/404.html";
   const main = document.getElementById("main__content");
   if (!main) return;
