@@ -16,19 +16,27 @@
   </section>
   <section class="case-section">
     <h2>Architecture defined by the repository</h2>
-    <div class="diagram"><div class="flow-diagram">
-      <div class="flow-node">hubs-global.csv</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Ingestion service · clean and expose hub data</div>
-      <span class="flow-arrow">↓ REST</span>
-      <div class="flow-node">Hub service · place / sorting-centre data</div>
-      <span class="flow-arrow">↘ REST</span>
-      <div class="flow-node">Transit service · ETA calculation</div>
-      <span class="flow-arrow">↑ status events</span>
-      <div class="flow-node">Delay-stage service · ActiveMQ topic producer</div>
-      <span class="flow-arrow">↓ topic subscription</span>
-      <div class="flow-node">Alert bot · notification consumer (stretch goal)</div>
-    </div></div>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">hubs-global.csv</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">
+          Ingestion service · clean and expose hub data
+        </div>
+        <span class="flow-arrow">↓ REST</span>
+        <div class="flow-node">Hub service · place / sorting-centre data</div>
+        <span class="flow-arrow">↘ REST</span>
+        <div class="flow-node">Transit service · ETA calculation</div>
+        <span class="flow-arrow">↑ status events</span>
+        <div class="flow-node">
+          Delay-stage service · ActiveMQ topic producer
+        </div>
+        <span class="flow-arrow">↓ topic subscription</span>
+        <div class="flow-node">
+          Alert bot · notification consumer (stretch goal)
+        </div>
+      </div>
+    </div>
     <p>
       The README describes a progression: CSV ingestion, synchronous REST
       integration between services, decoupling delay updates through the
@@ -47,10 +55,21 @@
     <h2>Technology and service boundaries</h2>
     <ul>
       <li><strong>Runtime:</strong> Java 17 and Maven.</li>
-      <li><strong>HTTP services:</strong> Javalin 5.6.3 with Jackson for JSON.</li>
-      <li><strong>Messaging:</strong> ActiveMQ Classic 5.18.3 using the JMS client.</li>
-      <li><strong>Services:</strong> ingestion, hub, delay-stage, transit and alert-bot modules.</li>
-      <li><strong>Local broker:</strong> Docker Compose exposing OpenWire and the broker console.</li>
+      <li>
+        <strong>HTTP services:</strong> Javalin 5.6.3 with Jackson for JSON.
+      </li>
+      <li>
+        <strong>Messaging:</strong> ActiveMQ Classic 5.18.3 using the JMS
+        client.
+      </li>
+      <li>
+        <strong>Services:</strong> ingestion, hub, delay-stage, transit and
+        alert-bot modules.
+      </li>
+      <li>
+        <strong>Local broker:</strong> Docker Compose exposing OpenWire and the
+        broker console.
+      </li>
     </ul>
   </section>
   <section class="case-section">
@@ -74,6 +93,13 @@
   </section>
   <section class="case-section">
     <h2>Repository</h2>
-    <p><a href="https://github.com/Kayr0r404/sin-001-logisticsconnect" target="_blank" rel="noopener">View LogisticsConnect on GitHub →</a></p>
+    <p>
+      <a
+        href="https://github.com/Kayr0r404/sin-001-logisticsconnect"
+        target="_blank"
+        rel="noopener"
+        >View LogisticsConnect on GitHub →</a
+      >
+    </p>
   </section>
 </article>

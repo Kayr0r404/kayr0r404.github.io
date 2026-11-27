@@ -16,19 +16,21 @@
   </section>
   <section class="case-section">
     <h2>Architecture</h2>
-    <div class="diagram"><div class="flow-diagram">
-      <div class="flow-node">Streamlit UI · upload PDF / provide URL</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">UniversalPDFLoader · text extraction</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Chunking · Gemini embeddings</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Pinecone vector index · tenant namespace</div>
-      <span class="flow-arrow">↓ query</span>
-      <div class="flow-node">Top-k vector retrieval · retrieved context</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Gemini answer generation</div>
-    </div></div>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">Streamlit UI · upload PDF / provide URL</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">UniversalPDFLoader · text extraction</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Chunking · Gemini embeddings</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Pinecone vector index · tenant namespace</div>
+        <span class="flow-arrow">↓ query</span>
+        <div class="flow-node">Top-k vector retrieval · retrieved context</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Gemini answer generation</div>
+      </div>
+    </div>
     <p>
       The Streamlit interface calls a GeminiRAG orchestration class. Ingestion
       extracts document text, splits it into chunks, embeds each chunk with
@@ -41,10 +43,19 @@
     <h2>Technology and responsibilities</h2>
     <ul>
       <li><strong>Interface:</strong> Streamlit.</li>
-      <li><strong>Document ingestion:</strong> UniversalPDFLoader, PDF/URL loading and text chunking.</li>
+      <li>
+        <strong>Document ingestion:</strong> UniversalPDFLoader, PDF/URL loading
+        and text chunking.
+      </li>
       <li><strong>Embeddings and generation:</strong> Google Gemini API.</li>
-      <li><strong>Vector retrieval:</strong> Pinecone serverless index with namespace separation.</li>
-      <li><strong>Observability:</strong> Langfuse tracing around retrieval and generation operations.</li>
+      <li>
+        <strong>Vector retrieval:</strong> Pinecone serverless index with
+        namespace separation.
+      </li>
+      <li>
+        <strong>Observability:</strong> Langfuse tracing around retrieval and
+        generation operations.
+      </li>
       <li><strong>Packaging:</strong> Docker support.</li>
     </ul>
     <p>
@@ -57,10 +68,10 @@
   <section class="case-section">
     <h2>Architecture considerations</h2>
     <p>
-      Retrieval quality depends on document parsing, chunk boundaries,
-      embedding consistency, namespace isolation and retrieval relevance. The
-      current implementation uses a simple paragraph-based chunking strategy
-      and top-five vector retrieval; production hardening would add evaluation
+      Retrieval quality depends on document parsing, chunk boundaries, embedding
+      consistency, namespace isolation and retrieval relevance. The current
+      implementation uses a simple paragraph-based chunking strategy and
+      top-five vector retrieval; production hardening would add evaluation
       datasets, source citations, ingestion status tracking, retries and
       tenant-level access controls around document operations.
     </p>
@@ -74,6 +85,13 @@
   </section>
   <section class="case-section">
     <h2>Repository</h2>
-    <p><a href="https://github.com/Kayr0r404/RAG__APP" target="_blank" rel="noopener">View RAG Assistant on GitHub →</a></p>
+    <p>
+      <a
+        href="https://github.com/Kayr0r404/RAG__APP"
+        target="_blank"
+        rel="noopener"
+        >View RAG Assistant on GitHub →</a
+      >
+    </p>
   </section>
 </article>

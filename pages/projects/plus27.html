@@ -15,17 +15,23 @@
   </section>
   <section class="case-section">
     <h2>Architecture</h2>
-    <div class="diagram"><div class="flow-diagram">
-      <div class="flow-node">Next.js App Router · React · TypeScript</div>
-      <span class="flow-arrow">↓ HTTPS / JSON API</span>
-      <div class="flow-node">FastAPI application · /api/v1</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">User & authentication routers</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Shared auth · route guards · repository factory</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">PostgreSQL (SQLModel / SQLAlchemy) · MongoDB (Beanie)</div>
-    </div></div>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">Next.js App Router · React · TypeScript</div>
+        <span class="flow-arrow">↓ HTTPS / JSON API</span>
+        <div class="flow-node">FastAPI application · /api/v1</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">User & authentication routers</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">
+          Shared auth · route guards · repository factory
+        </div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">
+          PostgreSQL (SQLModel / SQLAlchemy) · MongoDB (Beanie)
+        </div>
+      </div>
+    </div>
     <p>
       The backend is currently structured as one FastAPI application with
       separate user and authentication routers, rather than independent
@@ -41,11 +47,26 @@
   <section class="case-section">
     <h2>Technology and responsibilities</h2>
     <ul>
-      <li><strong>Frontend:</strong> Next.js App Router, React, TypeScript and Tailwind CSS.</li>
-      <li><strong>API:</strong> FastAPI with versioned user and authentication routes.</li>
-      <li><strong>Identity:</strong> JWT access/refresh tokens, password hashing, cookie-based sessions and route-level guards.</li>
-      <li><strong>Persistence:</strong> SQLModel/SQLAlchemy with PostgreSQL and Beanie with MongoDB.</li>
-      <li><strong>Local infrastructure:</strong> Docker Compose for database services.</li>
+      <li>
+        <strong>Frontend:</strong> Next.js App Router, React, TypeScript and
+        Tailwind CSS.
+      </li>
+      <li>
+        <strong>API:</strong> FastAPI with versioned user and authentication
+        routes.
+      </li>
+      <li>
+        <strong>Identity:</strong> JWT access/refresh tokens, password hashing,
+        cookie-based sessions and route-level guards.
+      </li>
+      <li>
+        <strong>Persistence:</strong> SQLModel/SQLAlchemy with PostgreSQL and
+        Beanie with MongoDB.
+      </li>
+      <li>
+        <strong>Local infrastructure:</strong> Docker Compose for database
+        services.
+      </li>
     </ul>
   </section>
   <section class="case-section">
@@ -70,6 +91,13 @@
   </section>
   <section class="case-section">
     <h2>Repository</h2>
-    <p><a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener">View Plus27 on GitHub →</a></p>
+    <p>
+      <a
+        href="https://github.com/Kayr0r404/Plus27"
+        target="_blank"
+        rel="noopener"
+        >View Plus27 on GitHub →</a
+      >
+    </p>
   </section>
 </article>

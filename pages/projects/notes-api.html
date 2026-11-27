@@ -15,17 +15,21 @@
   </section>
   <section class="case-section">
     <h2>Architecture</h2>
-    <div class="diagram"><div class="flow-diagram">
-      <div class="flow-node">React 19 client · React Router</div>
-      <span class="flow-arrow">↓ HTTP / JSON</span>
-      <div class="flow-node">Django 5.1 · Django REST Framework</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">SimpleJWT · HttpOnly access / refresh cookies</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Authenticated note and user views</div>
-      <span class="flow-arrow">↓</span>
-      <div class="flow-node">Django ORM · SQLite (configured database)</div>
-    </div></div>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">React 19 client · React Router</div>
+        <span class="flow-arrow">↓ HTTP / JSON</span>
+        <div class="flow-node">Django 5.1 · Django REST Framework</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">
+          SimpleJWT · HttpOnly access / refresh cookies
+        </div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Authenticated note and user views</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Django ORM · SQLite (configured database)</div>
+      </div>
+    </div>
     <p>
       The React application handles the user experience and calls the Django
       API. Django REST Framework provides registration, token, note and public
@@ -38,9 +42,17 @@
     <h2>Technology and responsibilities</h2>
     <ul>
       <li><strong>Frontend:</strong> React 19 and React Router 7.</li>
-      <li><strong>API:</strong> Django 5.1.5 and Django REST Framework 3.16.</li>
-      <li><strong>Authentication:</strong> SimpleJWT with access/refresh tokens stored in HttpOnly cookies.</li>
-      <li><strong>Persistence:</strong> Django ORM with SQLite configured in project settings.</li>
+      <li>
+        <strong>API:</strong> Django 5.1.5 and Django REST Framework 3.16.
+      </li>
+      <li>
+        <strong>Authentication:</strong> SimpleJWT with access/refresh tokens
+        stored in HttpOnly cookies.
+      </li>
+      <li>
+        <strong>Persistence:</strong> Django ORM with SQLite configured in
+        project settings.
+      </li>
     </ul>
     <p>
       The dependency file includes MySQL and SQLAlchemy packages, but the
@@ -68,6 +80,13 @@
   </section>
   <section class="case-section">
     <h2>Repository</h2>
-    <p><a href="https://github.com/Kayr0r404/notes_app" target="_blank" rel="noopener">View Notes API on GitHub →</a></p>
+    <p>
+      <a
+        href="https://github.com/Kayr0r404/notes_app"
+        target="_blank"
+        rel="noopener"
+        >View Notes API on GitHub →</a
+      >
+    </p>
   </section>
 </article>
