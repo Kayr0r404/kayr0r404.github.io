@@ -7,6 +7,7 @@ const routes = {
   "/series/": "/pages/series.html",
   "/about/": "/about.html",
   "/contact/": "/pages/contact.html",
+  "/cv/": "/pages/cv.html",
   "/projects/plus27/": "/pages/projects/plus27.html",
   "/projects/rag-system/": "/pages/projects/rag-system.html",
   "/projects/tlik-marketplace/": "/pages/projects/tlik-marketplace.html",
@@ -27,6 +28,7 @@ const pageTitles = {
   "/series/": "Learning Series — Karabo Mahlare",
   "/about/": "About — Karabo Mahlare",
   "/contact/": "Contact — Karabo Mahlare",
+  "/cv/": "Curriculum Vitae — Karabo Mahlare",
   "/projects/plus27/": "Plus27 — Project Case Study",
   "/projects/rag-system/": "Intelligent RAG System — Project Case Study",
   "/projects/tlik-marketplace/": "tlik Marketplace — Project Case Study",
@@ -53,6 +55,7 @@ const pageDescriptions = {
   "/about/":
     "Learn about Karabo Mahlare's software engineering experience, Mathematical Sciences background, education and technical interests.",
   "/contact/": "Contact Karabo Mahlare by email, LinkedIn or GitHub.",
+  "/cv/": "View Karabo Mahlare’s software engineering experience, technical skills, projects, education and mentoring experience.",
   "/projects/plus27/":
     "Plus27 case study: an area-first community platform and its application architecture.",
   "/projects/rag-system/":
