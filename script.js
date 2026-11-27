@@ -62,10 +62,6 @@ const pageDescriptions = {
   "/projects/notes-api/":
     "Notes API Platform case study: authenticated notes and public or private sharing.",
   "/projects/thequide/": "TheQuide case study: an author and content platform.",
-  "/projects/robot-world/":
-    "Robot World case study: Java, SQLite persistence, clean code and containerised CI/CD.",
-  "/projects/oddease/":
-    "OddEase case study: a FastAPI authentication service and cross-language service architecture.",
   "/projects/logisticsconnect/":
     "LogisticsConnect case study: parcel tracking and event-driven status updates.",
   "/series/redpanda-kafka/":
