@@ -1,92 +1,166 @@
 <article class="page-wrap shelves-page">
-<header class="hero hero-page">
-  <h1>Shelves</h1>
-  <p class="hero-description">A curated list of tutorials, references, and deep dives. Curated collections that organise my technical interests into connected concepts, practical exercises and projects.</p>
-</header>
-
-<section class="section-index" id="backend-foundations">
-  <header class="heading">
-    <div class="heading-row"><h2>Backend foundations</h2></div>
-    <div class="description">HTTP, REST, API design, authentication, authorization, validation, error handling, persistence, testing and service boundaries.</div>
+  <header class="hero hero-page">
+    <h1>Shelves</h1>
+    <p class="hero-description">
+      A curated list of tutorials, references, and deep dives. Curated
+      collections that organise my technical interests into connected concepts,
+      practical exercises and projects.
+    </p>
   </header>
-  <div class="posts shelf">
-    <a class="post" href="/series/backend-services/"><div>Backend services across languages</div></a>
-    <a class="post" href="/series/backend-services/#part-1"><div>Define service responsibilities</div></a>
-    <a class="post" href="/series/backend-services/#part-2"><div>Design the token contract</div></a>
-    <a class="post" href="/series/backend-services/#part-3"><div>Validate tokens in Java</div></a>
-    <a class="post" href="/series/backend-services/#part-4"><div>Authorization at resource boundaries</div></a>
-    <a class="post" href="/series/backend-services/#part-5"><div>Handle failure and revocation</div></a>
-    <a class="post" href="/series/backend-services/#part-6"><div>Test the integration</div></a>
-  </div>
-  <p class="project-meta">FastAPI · Spring Boot · Django · PostgreSQL</p>
-</section>
 
-<section class="section-index" id="data-platforms-pipelines">
-  <header class="heading">
-    <div class="heading-row"><h2>Data platforms &amp; pipelines</h2></div>
-    <div class="description">Data modelling, SQL, ETL/ELT, batch processing, quality checks, orchestration, event streaming and schema evolution.</div>
-  </header>
-  <div class="posts shelf">
-    <a class="post" href="/series/redpanda-kafka/"><div>Redpanda for application developers</div></a>
-    <a class="post" href="/series/redpanda-kafka/#part-1"><div>Why event streaming exists</div></a>
-    <a class="post" href="/series/redpanda-kafka/#part-2"><div>Core architecture</div></a>
-    <a class="post" href="/series/redpanda-kafka/#part-5"><div>Schemas and data contracts</div></a>
-    <a class="post" href="/series/redpanda-kafka/#part-6"><div>Operations and production readiness</div></a>
-  </div>
-  <p class="project-meta">SQL · Python · Redpanda · Kafka API</p>
-</section>
+  <section class="section-index" id="backend-foundations">
+    <header class="heading">
+      <div class="heading-row"><h2>Backend foundations</h2></div>
+      <div class="description">
+        HTTP, REST, API design, authentication, authorization, validation, error
+        handling, persistence, testing and service boundaries.
+      </div>
+    </header>
+    <div class="posts shelf">
+      <a class="post" href="/series/backend-services/"
+        ><div>Backend services across languages</div></a
+      >
+      <a class="post" href="/series/backend-services/#part-1"
+        ><div>Define service responsibilities</div></a
+      >
+      <a class="post" href="/series/backend-services/#part-2"
+        ><div>Design the token contract</div></a
+      >
+      <a class="post" href="/series/backend-services/#part-3"
+        ><div>Validate tokens in Java</div></a
+      >
+      <a class="post" href="/series/backend-services/#part-4"
+        ><div>Authorization at resource boundaries</div></a
+      >
+      <a class="post" href="/series/backend-services/#part-5"
+        ><div>Handle failure and revocation</div></a
+      >
+      <a class="post" href="/series/backend-services/#part-6"
+        ><div>Test the integration</div></a
+      >
+    </div>
+    <p class="project-meta">FastAPI · Spring Boot · Django · PostgreSQL</p>
+  </section>
 
-<section class="section-index" id="messaging-distributed-systems">
-  <header class="heading">
-    <div class="heading-row"><h2>Messaging &amp; distributed systems</h2></div>
-    <div class="description">Producers, consumers, delivery semantics, retries, idempotency, ordering, observability, resilience and failure modes.</div>
-  </header>
-  <div class="posts shelf">
-    <a class="post" href="/series/redpanda-kafka/"><div>Event streaming with Redpanda</div></a>
-    <a class="post" href="/series/redpanda-kafka/#part-3"><div>Producers and consumers</div></a>
-    <a class="post" href="/series/redpanda-kafka/#part-4"><div>Delivery guarantees and reliability</div></a>
-    <a class="post" href="/projects/logisticsconnect/"><div>LogisticsConnect — event-driven application</div></a>
-    <a class="post" href="/projects/oddease/"><div>OddEase — authentication service</div></a>
-  </div>
-  <p class="project-meta">Redpanda · ActiveMQ · Docker</p>
-</section>
+  <section class="section-index" id="data-platforms-pipelines">
+    <header class="heading">
+      <div class="heading-row"><h2>Data platforms &amp; pipelines</h2></div>
+      <div class="description">
+        Data modelling, SQL, ETL/ELT, batch processing, quality checks,
+        orchestration, event streaming and schema evolution.
+      </div>
+    </header>
+    <div class="posts shelf">
+      <a class="post" href="/series/redpanda-kafka/"
+        ><div>Redpanda for application developers</div></a
+      >
+      <a class="post" href="/series/redpanda-kafka/#part-1"
+        ><div>Why event streaming exists</div></a
+      >
+      <a class="post" href="/series/redpanda-kafka/#part-2"
+        ><div>Core architecture</div></a
+      >
+      <a class="post" href="/series/redpanda-kafka/#part-5"
+        ><div>Schemas and data contracts</div></a
+      >
+      <a class="post" href="/series/redpanda-kafka/#part-6"
+        ><div>Operations and production readiness</div></a
+      >
+    </div>
+    <p class="project-meta">SQL · Python · Redpanda · Kafka API</p>
+  </section>
 
-<section class="section-index" id="retrieval-augmented-generation">
-  <header class="heading">
-    <div class="heading-row"><h2>Retrieval-augmented generation</h2></div>
-    <div class="description">Document ingestion, chunking, embeddings, vector search, retrieval evaluation, prompting and grounded responses.</div>
-  </header>
-  <div class="posts shelf">
-    <a class="post" href="/projects/rag-system/"><div>Intelligent RAG System</div></a>
-  </div>
-  <p class="project-meta">Python · Gemini · MongoDB Atlas</p>
-</section>
+  <section class="section-index" id="messaging-distributed-systems">
+    <header class="heading">
+      <div class="heading-row">
+        <h2>Messaging &amp; distributed systems</h2>
+      </div>
+      <div class="description">
+        Producers, consumers, delivery semantics, retries, idempotency,
+        ordering, observability, resilience and failure modes.
+      </div>
+    </header>
+    <div class="posts shelf">
+      <a class="post" href="/series/redpanda-kafka/"
+        ><div>Event streaming with Redpanda</div></a
+      >
+      <a class="post" href="/series/redpanda-kafka/#part-3"
+        ><div>Producers and consumers</div></a
+      >
+      <a class="post" href="/series/redpanda-kafka/#part-4"
+        ><div>Delivery guarantees and reliability</div></a
+      >
+      <a class="post" href="/projects/logisticsconnect/"
+        ><div>LogisticsConnect — event-driven application</div></a
+      >
+      <a class="post" href="/projects/oddease/"
+        ><div>OddEase — authentication service</div></a
+      >
+    </div>
+    <p class="project-meta">Redpanda · ActiveMQ · Docker</p>
+  </section>
 
-<section class="section-index" id="engineering-fundamentals">
-  <header class="heading">
-    <div class="heading-row"><h2>Engineering fundamentals</h2></div>
-    <div class="description">Java, Python, data structures, algorithms, object-oriented design, clean code, Git, Linux and CI/CD.</div>
-  </header>
-  <div class="posts shelf">
-    <a class="post" href="/projects/robot-world/"><div>Robot World</div></a>
-  </div>
-  <p class="project-meta">Java · Python · GitLab CI · Docker</p>
-</section>
+  <section class="section-index" id="retrieval-augmented-generation">
+    <header class="heading">
+      <div class="heading-row"><h2>Retrieval-augmented generation</h2></div>
+      <div class="description">
+        Document ingestion, chunking, embeddings, vector search, retrieval
+        evaluation, prompting and grounded responses.
+      </div>
+    </header>
+    <div class="posts shelf">
+      <a class="post" href="/projects/rag-system/"
+        ><div>Intelligent RAG System</div></a
+      >
+    </div>
+    <p class="project-meta">Python · Gemini · MongoDB Atlas</p>
+  </section>
 
-<section class="section-index" id="self-hosting-operations">
-  <header class="heading">
-    <div class="heading-row"><h2>Self-hosting &amp; operations</h2></div>
-    <div class="description">Linux administration, containers, networking, reverse proxies, TLS, monitoring, backups and secure deployment.</div>
-  </header>
-  <div class="posts shelf">
-    <a class="post" href="/series/self-hosting/"><div>From application to self-hosted deployment</div></a>
-    <a class="post" href="/series/self-hosting/#part-1"><div>Understand the machine and operating system</div></a>
-    <a class="post" href="/series/self-hosting/#part-2"><div>Containerise applications</div></a>
-    <a class="post" href="/series/self-hosting/#part-3"><div>Networking and access</div></a>
-    <a class="post" href="/series/self-hosting/#part-4"><div>Deploy and update services</div></a>
-    <a class="post" href="/series/self-hosting/#part-5"><div>Observability and backups</div></a>
-    <a class="post" href="/series/self-hosting/#part-6"><div>Harden the platform</div></a>
-  </div>
-  <p class="project-meta">Linux · Docker · Networking</p>
-</section>
+  <section class="section-index" id="engineering-fundamentals">
+    <header class="heading">
+      <div class="heading-row"><h2>Engineering fundamentals</h2></div>
+      <div class="description">
+        Java, Python, data structures, algorithms, object-oriented design, clean
+        code, Git, Linux and CI/CD.
+      </div>
+    </header>
+    <div class="posts shelf">
+      <a class="post" href="/projects/robot-world/"><div>Robot World</div></a>
+    </div>
+    <p class="project-meta">Java · Python · GitLab CI · Docker</p>
+  </section>
+
+  <section class="section-index" id="self-hosting-operations">
+    <header class="heading">
+      <div class="heading-row"><h2>Self-hosting &amp; operations</h2></div>
+      <div class="description">
+        Linux administration, containers, networking, reverse proxies, TLS,
+        monitoring, backups and secure deployment.
+      </div>
+    </header>
+    <div class="posts shelf">
+      <a class="post" href="/series/self-hosting/"
+        ><div>From application to self-hosted deployment</div></a
+      >
+      <a class="post" href="/series/self-hosting/#part-1"
+        ><div>Understand the machine and operating system</div></a
+      >
+      <a class="post" href="/series/self-hosting/#part-2"
+        ><div>Containerise applications</div></a
+      >
+      <a class="post" href="/series/self-hosting/#part-3"
+        ><div>Networking and access</div></a
+      >
+      <a class="post" href="/series/self-hosting/#part-4"
+        ><div>Deploy and update services</div></a
+      >
+      <a class="post" href="/series/self-hosting/#part-5"
+        ><div>Observability and backups</div></a
+      >
+      <a class="post" href="/series/self-hosting/#part-6"
+        ><div>Harden the platform</div></a
+      >
+    </div>
+    <p class="project-meta">Linux · Docker · Networking</p>
+  </section>
 </article>

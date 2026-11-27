@@ -1,1 +1,79 @@
-<article class="page-wrap"><p class="eyebrow">PROJECT CASE STUDY · APPLIED AI · KNOWLEDGE RETRIEVAL</p><h1>Intelligent RAG System</h1><p class="lead">A document-based assistant that makes information in PDF files easier to search and explore using retrieval-augmented generation.</p><section class="case-section"><h2>The problem</h2><p>A language model alone may not know the contents of a user's private documents. The application needs a way to ingest source material, retrieve relevant passages and ground responses in that material.</p></section><section class="case-section"><h2>What I built</h2><p>The Streamlit application accepts PDF documents, processes their content, stores searchable representations and uses retrieval to provide context to a Gemini-powered response. MongoDB Atlas Vector Search supports semantic retrieval.</p></section><section class="case-section"><h2>Architecture at a glance</h2><div class="diagram"><div class="flow-diagram"><div class="flow-node">PDF upload</div><span class="flow-arrow">↓</span><div class="flow-node">Parse & chunk documents</div><span class="flow-arrow">↓</span><div class="flow-node">Create embeddings</div><span class="flow-arrow">↓</span><div class="flow-node">Atlas vector search</div><span class="flow-arrow">↓</span><div class="flow-node">Gemini response with retrieved context</div></div></div><p class="note">Conceptual architecture overview; details are intentionally limited to the implementation information available.</p></section><section class="case-section"><h2>My contribution</h2><p>Built the RAG application and worked with document ingestion, vector search and model integration. The project uses the `sample_mflix.ragpdf` database/collection context in Atlas and was containerised for deployment.</p></section><section class="case-section"><h2>Technology</h2><p>Python · Streamlit · LangChain · Google Gemini · MongoDB Atlas Vector Search · Docker</p></section><section class="case-section"><h2>What I learned</h2><p>RAG quality depends on the full retrieval pipeline: parsing, chunking, embedding, indexing, retrieval and prompt construction. A fluent answer is not necessarily a grounded answer; source relevance and evaluation matter.</p></section><section class="case-section"><h2>Explore</h2><p><a href='https://theassistant.streamlit.app/' target='_blank' rel='noopener'>Live application →</a></p></section></article>
+<article class="page-wrap">
+  <p class="eyebrow">PROJECT CASE STUDY · APPLIED AI · KNOWLEDGE RETRIEVAL</p>
+  <h1>Intelligent RAG System</h1>
+  <p class="lead">
+    A document-based assistant that makes information in PDF files easier to
+    search and explore using retrieval-augmented generation.
+  </p>
+  <section class="case-section">
+    <h2>The problem</h2>
+    <p>
+      A language model alone may not know the contents of a user's private
+      documents. The application needs a way to ingest source material, retrieve
+      relevant passages and ground responses in that material.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>What I built</h2>
+    <p>
+      The Streamlit application accepts PDF documents, processes their content,
+      stores searchable representations and uses retrieval to provide context to
+      a Gemini-powered response. MongoDB Atlas Vector Search supports semantic
+      retrieval.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Architecture at a glance</h2>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">PDF upload</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Parse & chunk documents</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Create embeddings</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Atlas vector search</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Gemini response with retrieved context</div>
+      </div>
+    </div>
+    <p class="note">
+      Conceptual architecture overview; details are intentionally limited to the
+      implementation information available.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>My contribution</h2>
+    <p>
+      Built the RAG application and worked with document ingestion, vector
+      search and model integration. The project uses the `sample_mflix.ragpdf`
+      database/collection context in Atlas and was containerised for deployment.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Technology</h2>
+    <p>
+      Python · Streamlit · LangChain · Google Gemini · MongoDB Atlas Vector
+      Search · Docker
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>What I learned</h2>
+    <p>
+      RAG quality depends on the full retrieval pipeline: parsing, chunking,
+      embedding, indexing, retrieval and prompt construction. A fluent answer is
+      not necessarily a grounded answer; source relevance and evaluation matter.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Explore</h2>
+    <p>
+      <a
+        href="https://theassistant.streamlit.app/"
+        target="_blank"
+        rel="noopener"
+        >Live application →</a
+      >
+    </p>
+  </section>
+</article>

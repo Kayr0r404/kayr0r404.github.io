@@ -1,1 +1,69 @@
-<article class="page-wrap"><p class="eyebrow">PROJECT CASE STUDY · BACKEND API</p><h1>Notes API Platform</h1><p class="lead">A notes application combining a Django REST backend and React frontend, with authentication and controlled sharing.</p><section class="case-section"><h2>The problem</h2><p>Users need to create and manage notes while controlling whether each note remains private or can be shared publicly. Access rules must be enforced by the backend, not only hidden in the interface.</p></section><section class="case-section"><h2>What I built</h2><p>The application provides authentication, CRUD operations and public/private sharing with permission-aware access. The React client consumes the Django REST API and uses JWT-based authentication.</p></section><section class="case-section"><h2>Architecture at a glance</h2><div class="diagram"><div class="flow-diagram"><div class="flow-node">React client</div><span class="flow-arrow">↓</span><div class="flow-node">JWT-authenticated API</div><span class="flow-arrow">↓</span><div class="flow-node">Permission checks</div><span class="flow-arrow">↓</span><div class="flow-node">SQLite persistence</div></div></div><p class="note">Conceptual architecture overview; details are intentionally limited to the implementation information available.</p></section><section class="case-section"><h2>My contribution</h2><p>Worked on the full-stack notes platform, including backend API functionality and integration with the React client.</p></section><section class="case-section"><h2>Technology</h2><p>Django REST Framework · React · SQLite · JWT</p></section><section class="case-section"><h2>What I learned</h2><p>This project highlights the importance of enforcing authorization at the API boundary, modelling ownership and visibility clearly, and testing access-control cases as carefully as happy paths.</p></section><section class="case-section"><h2>Explore</h2><p><a href='https://notes-0o79.onrender.com' target='_blank' rel='noopener'>Live project →</a></p></section></article>
+<article class="page-wrap">
+  <p class="eyebrow">PROJECT CASE STUDY · BACKEND API</p>
+  <h1>Notes API Platform</h1>
+  <p class="lead">
+    A notes application combining a Django REST backend and React frontend, with
+    authentication and controlled sharing.
+  </p>
+  <section class="case-section">
+    <h2>The problem</h2>
+    <p>
+      Users need to create and manage notes while controlling whether each note
+      remains private or can be shared publicly. Access rules must be enforced
+      by the backend, not only hidden in the interface.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>What I built</h2>
+    <p>
+      The application provides authentication, CRUD operations and
+      public/private sharing with permission-aware access. The React client
+      consumes the Django REST API and uses JWT-based authentication.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Architecture at a glance</h2>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">React client</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">JWT-authenticated API</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Permission checks</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">SQLite persistence</div>
+      </div>
+    </div>
+    <p class="note">
+      Conceptual architecture overview; details are intentionally limited to the
+      implementation information available.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>My contribution</h2>
+    <p>
+      Worked on the full-stack notes platform, including backend API
+      functionality and integration with the React client.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Technology</h2>
+    <p>Django REST Framework · React · SQLite · JWT</p>
+  </section>
+  <section class="case-section">
+    <h2>What I learned</h2>
+    <p>
+      This project highlights the importance of enforcing authorization at the
+      API boundary, modelling ownership and visibility clearly, and testing
+      access-control cases as carefully as happy paths.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Explore</h2>
+    <p>
+      <a href="https://notes-0o79.onrender.com" target="_blank" rel="noopener"
+        >Live project →</a
+      >
+    </p>
+  </section>
+</article>

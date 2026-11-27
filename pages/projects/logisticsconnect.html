@@ -1,1 +1,69 @@
-<article class="page-wrap"><p class="eyebrow">PROJECT CASE STUDY · EVENT-DRIVEN APPLICATION</p><h1>LogisticsConnect</h1><p class="lead">A parcel-tracking application exploring asynchronous status updates and real-time communication.</p><section class="case-section"><h2>The problem</h2><p>A parcel's status changes over time. Consumers of that information should be able to react to updates without tightly coupling every component to the tracking service.</p></section><section class="case-section"><h2>What I built</h2><p>The project uses a Javalin application and ActiveMQ topic-based messaging for package status events, with a hub endpoint for real-time client updates.</p></section><section class="case-section"><h2>Architecture at a glance</h2><div class="diagram"><div class="flow-diagram"><div class="flow-node">Parcel tracking API</div><span class="flow-arrow">↓</span><div class="flow-node">ActiveMQ status topic</div><span class="flow-arrow">↓</span><div class="flow-node">Status event consumer</div><span class="flow-arrow">↓</span><div class="flow-node">Real-time client hub</div></div></div><p class="note">Conceptual architecture overview; details are intentionally limited to the implementation information available.</p></section><section class="case-section"><h2>My contribution</h2><p>Worked on the service integration and event-driven design, including package-status topic concepts and application endpoint configuration.</p></section><section class="case-section"><h2>Technology</h2><p>Java · Javalin · ActiveMQ · messaging topics · real-time hubs</p></section><section class="case-section"><h2>What I learned</h2><p>Messaging allows producers and consumers to evolve more independently, but introduces operational concerns: delivery, retries, duplicate messages, ordering and consumer failure handling.</p></section><section class="case-section"><h2>Explore</h2><p><a href='https://github.com/Kayr0r404' target='_blank' rel='noopener'>GitHub profile →</a></p></section></article>
+<article class="page-wrap">
+  <p class="eyebrow">PROJECT CASE STUDY · EVENT-DRIVEN APPLICATION</p>
+  <h1>LogisticsConnect</h1>
+  <p class="lead">
+    A parcel-tracking application exploring asynchronous status updates and
+    real-time communication.
+  </p>
+  <section class="case-section">
+    <h2>The problem</h2>
+    <p>
+      A parcel's status changes over time. Consumers of that information should
+      be able to react to updates without tightly coupling every component to
+      the tracking service.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>What I built</h2>
+    <p>
+      The project uses a Javalin application and ActiveMQ topic-based messaging
+      for package status events, with a hub endpoint for real-time client
+      updates.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Architecture at a glance</h2>
+    <div class="diagram">
+      <div class="flow-diagram">
+        <div class="flow-node">Parcel tracking API</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">ActiveMQ status topic</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Status event consumer</div>
+        <span class="flow-arrow">↓</span>
+        <div class="flow-node">Real-time client hub</div>
+      </div>
+    </div>
+    <p class="note">
+      Conceptual architecture overview; details are intentionally limited to the
+      implementation information available.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>My contribution</h2>
+    <p>
+      Worked on the service integration and event-driven design, including
+      package-status topic concepts and application endpoint configuration.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Technology</h2>
+    <p>Java · Javalin · ActiveMQ · messaging topics · real-time hubs</p>
+  </section>
+  <section class="case-section">
+    <h2>What I learned</h2>
+    <p>
+      Messaging allows producers and consumers to evolve more independently, but
+      introduces operational concerns: delivery, retries, duplicate messages,
+      ordering and consumer failure handling.
+    </p>
+  </section>
+  <section class="case-section">
+    <h2>Explore</h2>
+    <p>
+      <a href="https://github.com/Kayr0r404" target="_blank" rel="noopener"
+        >GitHub profile →</a
+      >
+    </p>
+  </section>
+</article>

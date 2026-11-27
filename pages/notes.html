@@ -1,1 +1,58 @@
-<article class="page-wrap"><p class="eyebrow">NOTES · WORKBENCH</p><h1>Small discoveries and working notes.</h1><p class="lead">Short-form notes from debugging, building projects, learning new tools and exploring engineering ideas.</p><div class="article-list"><article><span class="entry-meta">EVENT STREAMING</span><h2>Kafka API compatibility</h2><p>Redpanda implements the Kafka protocol, so many Kafka clients and developer workflows can be reused. Compatibility does not mean every operational detail or ecosystem feature is identical.</p></article><article><span class="entry-meta">BACKEND SECURITY</span><h2>Authentication is not authorization</h2><p>Authentication establishes who a caller is. Authorization determines what that caller may do. A valid token alone should not grant access to every resource.</p></article><article><span class="entry-meta">DATABASES</span><h2>Persistence boundaries matter</h2><p>Keep persistence concerns behind clear repository or data-access boundaries. This makes transaction handling, schema evolution and testing easier to reason about.</p></article><article><span class="entry-meta">CONTAINERS</span><h2>A container image is not a deployment strategy</h2><p>Building an image is one step. Configuration, secrets, networking, health checks, logs, persistent data and rollback are part of operating the application.</p></article><article><span class="entry-meta">LEARNING IN PUBLIC</span><h2>Document the trade-off, not just the tool</h2><p>A useful engineering note explains why a tool or pattern was selected, which alternatives were considered and what limitations remain.</p></article></div><p class="note">These are concise learning notes, not claims of completed production implementations.</p></article>
+<article class="page-wrap">
+  <p class="eyebrow">NOTES · WORKBENCH</p>
+  <h1>Small discoveries and working notes.</h1>
+  <p class="lead">
+    Short-form notes from debugging, building projects, learning new tools and
+    exploring engineering ideas.
+  </p>
+  <div class="article-list">
+    <article>
+      <span class="entry-meta">EVENT STREAMING</span>
+      <h2>Kafka API compatibility</h2>
+      <p>
+        Redpanda implements the Kafka protocol, so many Kafka clients and
+        developer workflows can be reused. Compatibility does not mean every
+        operational detail or ecosystem feature is identical.
+      </p>
+    </article>
+    <article>
+      <span class="entry-meta">BACKEND SECURITY</span>
+      <h2>Authentication is not authorization</h2>
+      <p>
+        Authentication establishes who a caller is. Authorization determines
+        what that caller may do. A valid token alone should not grant access to
+        every resource.
+      </p>
+    </article>
+    <article>
+      <span class="entry-meta">DATABASES</span>
+      <h2>Persistence boundaries matter</h2>
+      <p>
+        Keep persistence concerns behind clear repository or data-access
+        boundaries. This makes transaction handling, schema evolution and
+        testing easier to reason about.
+      </p>
+    </article>
+    <article>
+      <span class="entry-meta">CONTAINERS</span>
+      <h2>A container image is not a deployment strategy</h2>
+      <p>
+        Building an image is one step. Configuration, secrets, networking,
+        health checks, logs, persistent data and rollback are part of operating
+        the application.
+      </p>
+    </article>
+    <article>
+      <span class="entry-meta">LEARNING IN PUBLIC</span>
+      <h2>Document the trade-off, not just the tool</h2>
+      <p>
+        A useful engineering note explains why a tool or pattern was selected,
+        which alternatives were considered and what limitations remain.
+      </p>
+    </article>
+  </div>
+  <p class="note">
+    These are concise learning notes, not claims of completed production
+    implementations.
+  </p>
+</article>

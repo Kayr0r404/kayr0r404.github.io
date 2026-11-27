@@ -17,7 +17,7 @@ const routes = {
   "/projects/logisticsconnect/": "/pages/projects/logisticsconnect.html",
   "/series/redpanda-kafka/": "/pages/series/redpanda-kafka.html",
   "/series/backend-services/": "/pages/series/backend-services.html",
-  "/series/self-hosting/": "/pages/series/self-hosting.html"
+  "/series/self-hosting/": "/pages/series/self-hosting.html",
 };
 
 const pageTitles = {
@@ -39,29 +39,45 @@ const pageTitles = {
   "/projects/logisticsconnect/": "LogisticsConnect — Project Case Study",
   "/series/redpanda-kafka/": "Redpanda for Application Developers",
   "/series/backend-services/": "Backend Services Across Languages",
-  "/series/self-hosting/": "Self-hosted Application Platform"
+  "/series/self-hosting/": "Self-hosted Application Platform",
 };
 
 const pageDescriptions = {
   "/": "Karabo Mahlare — software developer, Mathematical Sciences graduate and builder of backend systems, data-driven products and AI-enabled applications.",
-  "/blog/": "Technical writing and planned articles on software engineering, backend systems, data engineering and applied AI.",
-  "/notes/": "Short engineering notes from building projects, debugging and learning software development concepts.",
-  "/shelves/": "Curated technical topic collections covering backend engineering, data platforms, distributed systems, applied AI and infrastructure.",
-  "/projects/": "Selected software projects and engineering case studies by Karabo Mahlare.",
-  "/series/": "Structured, practical learning journeys covering Redpanda, backend architecture and self-hosting.",
-  "/about/": "Learn about Karabo Mahlare's software engineering experience, Mathematical Sciences background, education and technical interests.",
+  "/blog/":
+    "Technical writing and planned articles on software engineering, backend systems, data engineering and applied AI.",
+  "/notes/":
+    "Short engineering notes from building projects, debugging and learning software development concepts.",
+  "/shelves/":
+    "Curated technical topic collections covering backend engineering, data platforms, distributed systems, applied AI and infrastructure.",
+  "/projects/":
+    "Selected software projects and engineering case studies by Karabo Mahlare.",
+  "/series/":
+    "Structured, practical learning journeys covering Redpanda, backend architecture and self-hosting.",
+  "/about/":
+    "Learn about Karabo Mahlare's software engineering experience, Mathematical Sciences background, education and technical interests.",
   "/contact/": "Contact Karabo Mahlare by email, LinkedIn or GitHub.",
-  "/projects/plus27/": "Plus27 case study: an area-first community platform and its application architecture.",
-  "/projects/rag-system/": "Intelligent RAG System case study: a document-grounded assistant using retrieval-augmented generation.",
-  "/projects/tlik-marketplace/": "tlik Marketplace case study: a full-stack marketplace application.",
-  "/projects/notes-api/": "Notes API Platform case study: authenticated notes and public or private sharing.",
+  "/projects/plus27/":
+    "Plus27 case study: an area-first community platform and its application architecture.",
+  "/projects/rag-system/":
+    "Intelligent RAG System case study: a document-grounded assistant using retrieval-augmented generation.",
+  "/projects/tlik-marketplace/":
+    "tlik Marketplace case study: a full-stack marketplace application.",
+  "/projects/notes-api/":
+    "Notes API Platform case study: authenticated notes and public or private sharing.",
   "/projects/thequide/": "TheQuide case study: an author and content platform.",
-  "/projects/robot-world/": "Robot World case study: Java, SQLite persistence, clean code and containerised CI/CD.",
-  "/projects/oddease/": "OddEase case study: a FastAPI authentication service and cross-language service architecture.",
-  "/projects/logisticsconnect/": "LogisticsConnect case study: parcel tracking and event-driven status updates.",
-  "/series/redpanda-kafka/": "A developer-focused learning series on Redpanda and the Kafka API.",
-  "/series/backend-services/": "A learning series on authentication, authorization and backend services across languages.",
-  "/series/self-hosting/": "A practical learning series on deploying and operating self-hosted applications."
+  "/projects/robot-world/":
+    "Robot World case study: Java, SQLite persistence, clean code and containerised CI/CD.",
+  "/projects/oddease/":
+    "OddEase case study: a FastAPI authentication service and cross-language service architecture.",
+  "/projects/logisticsconnect/":
+    "LogisticsConnect case study: parcel tracking and event-driven status updates.",
+  "/series/redpanda-kafka/":
+    "A developer-focused learning series on Redpanda and the Kafka API.",
+  "/series/backend-services/":
+    "A learning series on authentication, authorization and backend services across languages.",
+  "/series/self-hosting/":
+    "A practical learning series on deploying and operating self-hosted applications.",
 };
 
 let navigationSequence = 0;
@@ -74,25 +90,36 @@ function normalizePath(pathname) {
 
 function loadComponent(id, path) {
   return fetch(path)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) throw new Error(response.status);
       return response.text();
     })
-    .then(html => {
+    .then((html) => {
       const element = document.getElementById(id);
       if (element) element.innerHTML = html;
     })
-    .catch(error => console.error("Component load failed:", path, error));
+    .catch((error) => console.error("Component load failed:", path, error));
 }
 
 function applyTheme(theme) {
   const selectedTheme = theme === "dark" ? "dark" : "light";
   document.documentElement.dataset.theme = selectedTheme;
-  document.documentElement.classList.toggle("is-dark", selectedTheme === "dark");
-  document.documentElement.classList.toggle("is-light", selectedTheme === "light");
+  document.documentElement.classList.toggle(
+    "is-dark",
+    selectedTheme === "dark",
+  );
+  document.documentElement.classList.toggle(
+    "is-light",
+    selectedTheme === "light",
+  );
   const button = document.querySelector(".theme-toggle");
   if (button) {
-    button.setAttribute("aria-label", selectedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+    button.setAttribute(
+      "aria-label",
+      selectedTheme === "dark"
+        ? "Switch to light theme"
+        : "Switch to dark theme",
+    );
     button.setAttribute("aria-pressed", String(selectedTheme === "dark"));
   }
 }
@@ -103,12 +130,15 @@ function applyColor(color) {
   const selectedColor = COLOR_THEMES.includes(color) ? color : "yellow";
   document.documentElement.dataset.color = selectedColor;
   const current = document.getElementById("color-current");
-  if (current) current.style.backgroundColor = "var(--theme-" + selectedColor + ")";
-  document.querySelectorAll(".color-swatch, .dropdown-option").forEach(button => {
-    const active = button.dataset.color === selectedColor;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
+  if (current)
+    current.style.backgroundColor = "var(--theme-" + selectedColor + ")";
+  document
+    .querySelectorAll(".color-swatch, .dropdown-option")
+    .forEach((button) => {
+      const active = button.dataset.color === selectedColor;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
 }
 
 function updatePageChrome(path) {
@@ -116,13 +146,21 @@ function updatePageChrome(path) {
 
   const description = document.querySelector('meta[name="description"]');
   if (description) {
-    description.setAttribute("content", pageDescriptions[path] || "The requested page could not be found in Karabo Mahlare's portfolio.");
+    description.setAttribute(
+      "content",
+      pageDescriptions[path] ||
+        "The requested page could not be found in Karabo Mahlare's portfolio.",
+    );
   }
 
-  document.querySelectorAll("#navbar a[href^='/']").forEach(link => {
-    const linkPath = normalizePath(new URL(link.href, window.location.origin).pathname);
+  document.querySelectorAll("#navbar a[href^='/']").forEach((link) => {
+    const linkPath = normalizePath(
+      new URL(link.href, window.location.origin).pathname,
+    );
     const isHome = linkPath === "/";
-    const active = isHome ? path === "/" : path === linkPath || path.startsWith(linkPath);
+    const active = isHome
+      ? path === "/"
+      : path === linkPath || path.startsWith(linkPath);
     if (active) {
       link.setAttribute("aria-current", "page");
       link.classList.add("active");
@@ -137,7 +175,8 @@ function initSidebar() {
   const themeButton = document.querySelector(".theme-toggle");
   if (themeButton) {
     themeButton.addEventListener("click", () => {
-      const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      const nextTheme =
+        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
       applyTheme(nextTheme);
       try {
         localStorage.setItem("portfolio-theme", nextTheme);
@@ -147,17 +186,19 @@ function initSidebar() {
     });
   }
 
-  document.querySelectorAll(".color-swatch, .dropdown-option").forEach(button => {
-    button.addEventListener("click", () => {
-      applyColor(button.dataset.color);
-      closeColorMenu();
-      try {
-        localStorage.setItem("portfolio-color", button.dataset.color);
-      } catch (error) {
-        // The selected accent remains active until the page is reloaded.
-      }
+  document
+    .querySelectorAll(".color-swatch, .dropdown-option")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        applyColor(button.dataset.color);
+        closeColorMenu();
+        try {
+          localStorage.setItem("portfolio-color", button.dataset.color);
+        } catch (error) {
+          // The selected accent remains active until the page is reloaded.
+        }
+      });
     });
-  });
 
   // Color dropdown
   const colorButton = document.getElementById("color-button");
@@ -168,16 +209,17 @@ function initSidebar() {
     colorButton.setAttribute("aria-expanded", "false");
   }
   if (colorButton && colorResults) {
-    colorButton.addEventListener("click", event => {
+    colorButton.addEventListener("click", (event) => {
       event.stopPropagation();
       const open = colorResults.hidden;
       colorResults.hidden = !open;
       colorButton.setAttribute("aria-expanded", String(open));
     });
-    document.addEventListener("click", event => {
-      if (!colorResults.hidden && !event.target.closest("#color-picker")) closeColorMenu();
+    document.addEventListener("click", (event) => {
+      if (!colorResults.hidden && !event.target.closest("#color-picker"))
+        closeColorMenu();
     });
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeColorMenu();
     });
   }
@@ -187,20 +229,29 @@ function initSidebar() {
 }
 
 function initReveal() {
-  const nodes = document.querySelectorAll(".garden-section, .project-entry, .entry, .about-page h2, .case-section");
-  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const nodes = document.querySelectorAll(
+    ".garden-section, .project-entry, .entry, .about-page h2, .case-section",
+  );
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
 
-  nodes.forEach(node => node.classList.add("reveal"));
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.06 });
+  nodes.forEach((node) => node.classList.add("reveal"));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.06 },
+  );
 
-  nodes.forEach(node => observer.observe(node));
+  nodes.forEach((node) => observer.observe(node));
 }
 
 async function handleLocation({ focusMain = false } = {}) {
@@ -220,7 +271,8 @@ async function handleLocation({ focusMain = false } = {}) {
     main.innerHTML = html;
   } catch (error) {
     if (requestId !== navigationSequence) return;
-    main.innerHTML = '<article class="page-wrap"><p class="eyebrow">PAGE UNAVAILABLE</p><h1>We could not load this page.</h1><p class="lead">Please check your connection and try again.</p><a href="/">Return home →</a></article>';
+    main.innerHTML =
+      '<article class="page-wrap"><p class="eyebrow">PAGE UNAVAILABLE</p><h1>We could not load this page.</h1><p class="lead">Please check your connection and try again.</p><a href="/">Return home →</a></article>';
     console.error("Page load failed:", target, error);
   } finally {
     if (requestId === navigationSequence) main.removeAttribute("aria-busy");
@@ -252,7 +304,8 @@ function handleInternalNavigation(event) {
   const link = event.target.closest("a[href]");
   if (!link || event.defaultPrevented || event.button !== 0) return;
   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  if (link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+  if (link.hasAttribute("download") || (link.target && link.target !== "_self"))
+    return;
 
   const destination = new URL(link.href, window.location.href);
   if (destination.origin !== window.location.origin) return;
@@ -260,15 +313,27 @@ function handleInternalNavigation(event) {
   const path = normalizePath(destination.pathname);
   if (!Object.prototype.hasOwnProperty.call(routes, path)) return;
 
-  if (path === normalizePath(window.location.pathname) && destination.hash === window.location.hash) return;
+  if (
+    path === normalizePath(window.location.pathname) &&
+    destination.hash === window.location.hash
+  )
+    return;
 
   event.preventDefault();
-  history.pushState({}, "", destination.pathname + destination.search + destination.hash);
+  history.pushState(
+    {},
+    "",
+    destination.pathname + destination.search + destination.hash,
+  );
   handleLocation({ focusMain: true });
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-  let theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  let theme =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   let color = "yellow";
 
   try {
@@ -284,7 +349,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   await Promise.all([
     loadComponent("navbar", "/navbar.html"),
-    loadComponent("footer", "/footer.html")
+    loadComponent("footer", "/footer.html"),
   ]);
 
   initSidebar();
