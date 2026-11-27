@@ -55,7 +55,8 @@ const pageDescriptions = {
   "/about/":
     "Learn about Karabo Mahlare's software engineering experience, Mathematical Sciences background, education and technical interests.",
   "/contact/": "Contact Karabo Mahlare by email, LinkedIn or GitHub.",
-  "/cv/": "View Karabo Mahlare’s software engineering experience, technical skills, projects, education and mentoring experience.",
+  "/cv/":
+    "View Karabo Mahlare’s software engineering experience, technical skills, projects, education and mentoring experience.",
   "/projects/plus27/":
     "Plus27 case study: an area-first community platform and its application architecture.",
   "/projects/rag-system/":
@@ -252,6 +253,8 @@ function initReveal() {
 async function handleLocation({ focusMain = false } = {}) {
   const requestId = ++navigationSequence;
   const path = normalizePath(window.location.pathname);
+  // pages rendered directly (not router-loaded) keep their own content
+  if (path === "/pages/cv.html/") return;
   const target = routes[path] || "/pages/404.html";
   const main = document.getElementById("main__content");
   if (!main) return;
