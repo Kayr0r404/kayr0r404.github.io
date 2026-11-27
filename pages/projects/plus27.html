@@ -2,78 +2,74 @@
   <p class="eyebrow">PROJECT CASE STUDY · COMMUNITY PLATFORM</p>
   <h1>Plus27</h1>
   <p class="lead">
-    An area-first digital platform designed to bring local South African
-    communities, conversations and services into one place.
+    An area-first community platform bringing local conversations, groups,
+    events and services into one application.
   </p>
   <section class="case-section">
-    <h2>The problem</h2>
+    <h2>Problem and product scope</h2>
     <p>
-      Local communities often rely on fragmented channels to discover events,
-      find services, share information and connect with neighbours. The product
-      concept brings those activities into a location-aware experience.
+      Community activity is often spread across disconnected channels. Plus27
+      brings community discussions, groups, jobs, rentals, vendors and
+      marketplace experiences into one product with a shared identity layer.
     </p>
   </section>
   <section class="case-section">
-    <h2>What I built</h2>
+    <h2>Architecture</h2>
+    <div class="diagram"><div class="flow-diagram">
+      <div class="flow-node">Next.js App Router · React · TypeScript</div>
+      <span class="flow-arrow">↓ HTTPS / JSON API</span>
+      <div class="flow-node">FastAPI application · /api/v1</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">User & authentication routers</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">Shared auth · route guards · repository factory</div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-node">PostgreSQL (SQLModel / SQLAlchemy) · MongoDB (Beanie)</div>
+    </div></div>
     <p>
-      Plus27 is a community platform spanning conversations, events, groups, a
-      local marketplace, vendor profiles, odd jobs and rental listings. The
-      application uses a modern web frontend with backend services and data
-      stores supporting distinct product capabilities.
+      The backend is currently structured as one FastAPI application with
+      separate user and authentication routers, rather than independent
+      deployable microservices. A repository factory selects the user data
+      implementation, with PostgreSQL and MongoDB persistence adapters.
+    </p>
+    <p>
+      Docker Compose provisions PostgreSQL and MongoDB for local development.
+      The Java/Javalin directory is starter scaffolding and is not represented
+      as an active application service.
     </p>
   </section>
   <section class="case-section">
-    <h2>Architecture at a glance</h2>
-    <div class="diagram">
-      <div class="flow-diagram">
-        <div class="flow-node">Community web client</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">API / application services</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">Identity & access control</div>
-        <span class="flow-arrow">↓</span>
-        <div class="flow-node">PostgreSQL · MongoDB</div>
-      </div>
-    </div>
-    <p class="note">
-      Conceptual architecture overview; details are intentionally limited to the
-      implementation information available.
+    <h2>Technology and responsibilities</h2>
+    <ul>
+      <li><strong>Frontend:</strong> Next.js App Router, React, TypeScript and Tailwind CSS.</li>
+      <li><strong>API:</strong> FastAPI with versioned user and authentication routes.</li>
+      <li><strong>Identity:</strong> JWT access/refresh tokens, password hashing, cookie-based sessions and route-level guards.</li>
+      <li><strong>Persistence:</strong> SQLModel/SQLAlchemy with PostgreSQL and Beanie with MongoDB.</li>
+      <li><strong>Local infrastructure:</strong> Docker Compose for database services.</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Architecture decisions worth explaining</h2>
+    <p>
+      Keeping HTTP routing, identity logic, repository selection and persistence
+      in distinct modules makes the backend easier to evolve. The dual-database
+      setup is an explicit design choice in the repository: user records can be
+      routed through a selected repository implementation, while SQL and
+      document models serve different data needs. It also adds operational
+      complexity, so database ownership and consistency rules need to remain
+      clear as the product grows.
     </p>
   </section>
   <section class="case-section">
     <h2>My contribution</h2>
     <p>
-      Worked on the application as a full-stack project, with particular
-      attention to backend architecture and service design. The authentication
-      work uses FastAPI, JWT access/refresh tokens and a data layer that has
-      evolved through SQLModel/PostgreSQL and MongoDB/Beanie exploration.
+      Developed the application across its frontend and backend, with particular
+      attention to backend structure, authentication, API boundaries and
+      persistence integration.
     </p>
   </section>
   <section class="case-section">
-    <h2>Technology</h2>
-    <p>
-      Next.js · React · TypeScript · Tailwind CSS · FastAPI · Python ·
-      PostgreSQL · MongoDB · Docker
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>What I learned</h2>
-    <p>
-      A platform with multiple product areas benefits from clear domain
-      boundaries, consistent identity and authorization, and careful data
-      modelling. A working frontend needs reliable API contracts and environment
-      configuration as much as polished UI.
-    </p>
-  </section>
-  <section class="case-section">
-    <h2>Explore</h2>
-    <p>
-      <a
-        href="https://github.com/Kayr0r404/Plus27"
-        target="_blank"
-        rel="noopener"
-        >GitHub repository →</a
-      >
-    </p>
+    <h2>Repository</h2>
+    <p><a href="https://github.com/Kayr0r404/Plus27" target="_blank" rel="noopener">View Plus27 on GitHub →</a></p>
   </section>
 </article>
