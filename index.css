@@ -2185,3 +2185,173 @@ a.footer-link:hover .footer-chev {
     display: none !important;
   }
 }
+
+
+/* DOCX-faithful CV layout */
+.cv-page.cv-docx {
+  box-sizing: border-box;
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.38;
+  max-width: 850px;
+}
+.cv-docx-header {
+  margin: 0 auto 24px;
+  text-align: center;
+}
+.cv-docx-header h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: .035em;
+  margin: 0 0 5px;
+}
+.cv-docx-role {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.cv-docx-contact,
+.cv-docx-github {
+  font-size: 13px;
+  margin: 0 0 3px;
+}
+.cv-docx-section {
+  margin: 0 0 20px;
+}
+.cv-docx-section > h2 {
+  border: 0;
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .035em;
+  margin: 0 0 7px;
+  padding: 0;
+  text-transform: uppercase;
+}
+.cv-docx-section p {
+  margin: 0 0 7px;
+}
+.cv-docx-skills {
+  margin: 0;
+}
+.cv-docx-skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 5px;
+  margin: 0 0 4px;
+}
+.cv-docx-skills dt {
+  font-weight: 700;
+}
+.cv-docx-skills dd {
+  flex: 1 1 75%;
+  margin: 0;
+}
+.cv-docx-entry {
+  margin: 0 0 13px;
+}
+.cv-docx-entry-title {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  justify-content: space-between;
+}
+.cv-docx-entry h3,
+.cv-docx-education h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.cv-docx-entry h3 span {
+  font-size: 13px;
+  font-weight: 400;
+}
+.cv-docx-entry time,
+.cv-docx-entry-title > span {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.cv-docx-entry ul {
+  margin: 4px 0 0;
+  padding-left: 22px;
+}
+.cv-docx-entry li {
+  margin: 0 0 5px;
+  padding-left: 2px;
+}
+.cv-docx-education p {
+  margin: 0 0 7px;
+}
+.cv-docx .cv-actions {
+  justify-content: center;
+  margin-top: 12px;
+}
+@media (max-width: 600px) {
+  .cv-page.cv-docx {
+    font-size: 13px;
+  }
+  .cv-docx-entry-title {
+    display: block;
+  }
+  .cv-docx-entry time {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .cv-docx-skills > div {
+    display: block;
+  }
+}
+@media print {
+  @page { size: A4; margin: 14mm 17mm; }
+  html, body {
+    background: #fff !important;
+    color: #111 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 9pt !important;
+    line-height: 1.28 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sidebar, #navbar, #footer, .skip-link, .no-print, .cv-actions {
+    display: none !important;
+  }
+  .layout, .main-content, .main-content.page {
+    display: block !important;
+    margin: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .cv-page.cv-docx {
+    color: #111 !important;
+    font-size: 9pt !important;
+    line-height: 1.28 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+  .cv-docx-header { margin-bottom: 15pt; }
+  .cv-docx-header h1 { font-size: 17pt; }
+  .cv-docx-role { font-size: 9.5pt; }
+  .cv-docx-contact, .cv-docx-github { font-size: 8.5pt; }
+  .cv-docx-section { margin-bottom: 12pt; break-inside: auto; }
+  .cv-docx-section > h2 {
+    color: #111 !important;
+    font-size: 10pt;
+    margin-bottom: 5pt;
+    break-after: avoid;
+  }
+  .cv-docx-section p, .cv-docx-entry li, .cv-docx-skills dd {
+    color: #111 !important;
+    font-size: 8.7pt;
+  }
+  .cv-docx-entry { break-inside: avoid; }
+  .cv-docx-entry h3, .cv-docx-education h3 { font-size: 9pt; }
+  .cv-docx-entry li { margin-bottom: 3pt; }
+  .cv-docx-page-two { break-before: page; }
+  .cv-docx a { color: #111 !important; text-decoration: none; }
+}
